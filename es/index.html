@@ -57,7 +57,7 @@
         <p class="lead">Protocolos auditables y personal certificado, entrenado en bioseguridad y enfocado en el servicio al cliente como prioridad.</p>
 
         <div class="hero-ctas">
-          <a class="btn btn-primary" href="#calculadora-riesgo">Calcular mi riesgo</a>
+          <a class="btn btn-primary" href="#calculadora-riesgo">Evalúa a tu proveedor</a>
           <a class="btn btn-secondary" href="#servicios">Ver servicios</a>
         </div>
 
@@ -66,40 +66,36 @@
 
       <div class="tool-card" id="risk-audit" data-anchor="calculadora-riesgo">
         <div id="calculadora-riesgo" style="position:relative;top:-90px"></div>
-        <div class="eyebrow">Auditoría de riesgo: limpieza sin certificación</div>
-        <p class="desc">Un proveedor sin protocolos certificados no solo limpia peor: expone a tu empresa a ausentismo, incidentes de bioseguridad y contratos perdidos. Calcula lo que realmente cuesta cheapear en limpieza.</p>
+        <div class="eyebrow">Auditoría ESG del proveedor</div>
+        <p class="desc">La mayoría de las empresas de limpieza en Panamá no puede demostrar su cumplimiento ambiental, social y de gobernanza (ESG) con certificaciones reales. Responde una pregunta y compara a tu proveedor actual con el estándar Go Services.</p>
 
-        <label class="field">
-          <div class="field-row">
-            <span>Empleados expuestos a diario</span>
-            <span class="field-value" data-value-for="risk-employees">40</span>
-          </div>
-          <input type="range" id="risk-employees" min="5" max="500" step="5" value="40" />
-        </label>
-
-        <label class="field">
-          <div class="field-row">
-            <span>Días de ausentismo por enfermedad vinculados a limpieza deficiente (al año, por empleado)</span>
-            <span class="field-value" data-value-for="risk-absenteeism">3</span>
-          </div>
-          <input type="range" id="risk-absenteeism" min="0" max="15" step="1" value="3" />
-        </label>
-
-        <label class="field">
-          <div class="field-row">
-            <span>Costo estimado de un incidente de bioseguridad o cumplimiento — multas, contrato perdido, imagen (USD)</span>
-            <span class="field-value" data-value-for="risk-incident-cost">8000</span>
-          </div>
-          <input type="range" id="risk-incident-cost" min="0" max="50000" step="500" value="8000" />
-        </label>
-
-        <div class="result-panel">
-          <div class="result-label">Riesgo de negocio anual estimado</div>
-          <div class="result-value" id="risk-audit-result">USD 22,400</div>
-          <p class="result-caption">Combina el costo de ausentismo laboral (a USD 120/día por empleado) con el impacto típico de un incidente de cumplimiento o bioseguridad evitable con un proveedor certificado.</p>
+        <p class="esg-question">¿Tu proveedor actual de limpieza cumple con estándares modernos de ESG?</p>
+        <div class="choice-toggle" role="group">
+          <button type="button" data-answer="no">No</button>
+          <button type="button" data-answer="yes">Sí</button>
         </div>
 
-        <p class="disclaimer">Estimación referencial, no es una cotización. Un diagnóstico en sitio determina el riesgo real de tu instalación.</p>
+        <div class="result-panel" id="risk-audit-result">
+          <div class="result-state" data-state="empty">
+            <p class="result-caption">Selecciona una respuesta para ver el diagnóstico.</p>
+          </div>
+          <div class="result-state" data-state="no" hidden>
+            <div class="result-label">Ese es exactamente el riesgo.</div>
+            <p class="result-message">Un proveedor sin ESG verificable expone a tu empresa a incidentes de bioseguridad, alta rotación de personal y contratos perdidos por incumplimiento. Go Services opera bajo certificación ISO 9001, membresía ISSA y APAFAM, con protocolos 100% biofriendly desde el primer día.</p>
+            <div class="cert-badges">
+              <span class="badge">ISO 9001</span><span class="badge">ISSA</span><span class="badge">APAFAM</span>
+            </div>
+          </div>
+          <div class="result-state" data-state="yes" hidden>
+            <div class="result-label">Bien — ¿pero puede demostrarlo?</div>
+            <p class="result-message">Muchos proveedores afirman cumplir ESG sin certificación que lo respalde. Go Services sí: ISO 9001, ISSA y APAFAM, auditorías en sitio y protocolos biofriendly verificables — no solo promesas.</p>
+            <div class="cert-badges">
+              <span class="badge">ISO 9001</span><span class="badge">ISSA</span><span class="badge">APAFAM</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="disclaimer">Este diagnóstico es orientativo. Una auditoría en sitio confirma el cumplimiento real de tu operación.</p>
       </div>
     </div>
   </section>
@@ -426,6 +422,9 @@
     <div class="footer-brand" style="grid-column:span 2">
       <a class="logo" href="/es/">GO SERVICES <span>// PANAMA</span></a>
       <p>Instalaciones impecables, operación sin fricción.</p>
+      <div class="footer-certs">
+        <span class="badge">ISO 9001</span><span class="badge">ISSA</span><span class="badge">APAFAM</span>
+      </div>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Servicios de Limpieza</div>

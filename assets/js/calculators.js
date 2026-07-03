@@ -1,8 +1,6 @@
 (function () {
   "use strict";
 
-  var DAILY_COST_PER_EMPLOYEE = 120;
-
   function formatCurrency(value, locale) {
     return new Intl.NumberFormat(locale === "es" ? "es-PA" : "en-US", {
       style: "currency",
@@ -22,24 +20,27 @@
     return input;
   }
 
-  function initRiskAudit(locale) {
+  function initRiskAudit() {
     var root = document.getElementById("risk-audit");
     if (!root) return;
 
-    var resultEl = document.getElementById("risk-audit-result");
+    var buttons = root.querySelectorAll(".choice-toggle button");
+    var states = root.querySelectorAll(".result-state");
 
-    function recompute() {
-      var employees = Number(document.getElementById("risk-employees").value);
-      var absenteeism = Number(document.getElementById("risk-absenteeism").value);
-      var incidentCost = Number(document.getElementById("risk-incident-cost").value);
-      var total = employees * absenteeism * DAILY_COST_PER_EMPLOYEE + incidentCost;
-      resultEl.textContent = formatCurrency(total, locale);
+    function showState(answer) {
+      states.forEach(function (el) {
+        el.hidden = el.dataset.state !== answer;
+      });
+      buttons.forEach(function (btn) {
+        btn.setAttribute("aria-pressed", String(btn.dataset.answer === answer));
+      });
     }
 
-    bindRange("risk-employees", recompute);
-    bindRange("risk-absenteeism", recompute);
-    bindRange("risk-incident-cost", recompute);
-    recompute();
+    buttons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        showState(btn.dataset.answer);
+      });
+    });
   }
 
   function initBiocleaningAudit(locale) {
@@ -64,7 +65,7 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     var locale = document.documentElement.lang === "en" ? "en" : "es";
-    initRiskAudit(locale);
+    initRiskAudit();
     initBiocleaningAudit(locale);
 
     var toggle = document.querySelector(".mobile-nav-toggle");

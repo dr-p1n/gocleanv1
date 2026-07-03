@@ -57,7 +57,7 @@
         <p class="lead">Auditable protocols and certified staff, biosafety-trained and focused on customer service as a priority.</p>
 
         <div class="hero-ctas">
-          <a class="btn btn-primary" href="#risk-calculator">Calculate my risk</a>
+          <a class="btn btn-primary" href="#risk-calculator">Evaluate your vendor</a>
           <a class="btn btn-secondary" href="#services">View services</a>
         </div>
 
@@ -66,40 +66,36 @@
 
       <div class="tool-card" id="risk-audit">
         <div id="risk-calculator" style="position:relative;top:-90px"></div>
-        <div class="eyebrow">Uncertified cleaning risk audit</div>
-        <p class="desc">A provider without certified protocols doesn't just clean worse — it exposes your company to absenteeism, biosafety incidents, and lost contracts. Calculate the real cost of cutting corners on cleaning.</p>
+        <div class="eyebrow">Vendor ESG audit</div>
+        <p class="desc">Most cleaning vendors in Panama can't back up their environmental, social, and governance (ESG) claims with real certification. Answer one question and see how your current vendor compares to the Go Services standard.</p>
 
-        <label class="field">
-          <div class="field-row">
-            <span>Employees exposed daily</span>
-            <span class="field-value" data-value-for="risk-employees">40</span>
-          </div>
-          <input type="range" id="risk-employees" min="5" max="500" step="5" value="40" />
-        </label>
-
-        <label class="field">
-          <div class="field-row">
-            <span>Sick days linked to poor cleaning (per year, per employee)</span>
-            <span class="field-value" data-value-for="risk-absenteeism">3</span>
-          </div>
-          <input type="range" id="risk-absenteeism" min="0" max="15" step="1" value="3" />
-        </label>
-
-        <label class="field">
-          <div class="field-row">
-            <span>Estimated cost of a biosafety or compliance incident — fines, lost contract, image (USD)</span>
-            <span class="field-value" data-value-for="risk-incident-cost">8000</span>
-          </div>
-          <input type="range" id="risk-incident-cost" min="0" max="50000" step="500" value="8000" />
-        </label>
-
-        <div class="result-panel">
-          <div class="result-label">Estimated annual business risk</div>
-          <div class="result-value" id="risk-audit-result">$22,400</div>
-          <p class="result-caption">Combines the cost of absenteeism (at $120/day per employee) with the typical impact of a compliance or biosafety incident that's avoidable with a certified provider.</p>
+        <p class="esg-question">Does your current cleaning vendor meet modern ESG standards?</p>
+        <div class="choice-toggle" role="group">
+          <button type="button" data-answer="no">No</button>
+          <button type="button" data-answer="yes">Yes</button>
         </div>
 
-        <p class="disclaimer">Reference estimate only, not a quote. An on-site diagnostic determines your facility's real risk.</p>
+        <div class="result-panel" id="risk-audit-result">
+          <div class="result-state" data-state="empty">
+            <p class="result-caption">Pick an answer to see the diagnosis.</p>
+          </div>
+          <div class="result-state" data-state="no" hidden>
+            <div class="result-label">That's exactly the risk.</div>
+            <p class="result-message">A vendor without verifiable ESG standards exposes your company to biosafety incidents, high staff turnover, and lost contracts over non-compliance. Go Services operates under ISO 9001 certification, ISSA membership, and APAFAM — with 100% biofriendly protocols from day one.</p>
+            <div class="cert-badges">
+              <span class="badge">ISO 9001</span><span class="badge">ISSA</span><span class="badge">APAFAM</span>
+            </div>
+          </div>
+          <div class="result-state" data-state="yes" hidden>
+            <div class="result-label">Good — but can they prove it?</div>
+            <p class="result-message">Plenty of vendors claim ESG compliance without certification to back it up. Go Services does: ISO 9001, ISSA, and APAFAM, on-site audits, and verifiable biofriendly protocols — not just promises.</p>
+            <div class="cert-badges">
+              <span class="badge">ISO 9001</span><span class="badge">ISSA</span><span class="badge">APAFAM</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="disclaimer">This diagnosis is for guidance only. An on-site audit confirms your operation's real compliance.</p>
       </div>
     </div>
   </section>
@@ -426,6 +422,9 @@
     <div class="footer-brand" style="grid-column:span 2">
       <a class="logo" href="/en/">GO SERVICES <span>// PANAMA</span></a>
       <p>Spotless facilities, frictionless operations.</p>
+      <div class="footer-certs">
+        <span class="badge">ISO 9001</span><span class="badge">ISSA</span><span class="badge">APAFAM</span>
+      </div>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Cleaning Services</div>
