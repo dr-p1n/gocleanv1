@@ -310,50 +310,12 @@ p {
   font-size: 14px;
 }
 
-.field {
-  display: block;
-  margin-top: 20px;
-}
-
-.field .field-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 14px;
-}
-
-.field .field-value {
-  font-family: var(--font-mono);
-  font-weight: 600;
-  color: var(--color-navy);
-}
-
-.field input[type="range"] {
-  width: 100%;
-  margin-top: 8px;
-  accent-color: var(--color-accent);
-}
-
 .result-panel {
   margin-top: 32px;
   border-radius: 10px;
   background: var(--color-navy);
   color: #fff;
   padding: 20px;
-}
-
-.result-panel .result-label {
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.result-panel .result-value {
-  margin-top: 4px;
-  font-family: var(--font-mono);
-  font-size: clamp(1.6rem, 3vw, 2.1rem);
-  font-weight: 600;
 }
 
 .result-panel .result-caption {

@@ -1,27 +1,8 @@
 (function () {
   "use strict";
 
-  function formatCurrency(value, locale) {
-    return new Intl.NumberFormat(locale === "es" ? "es-PA" : "en-US", {
-      style: "currency",
-      currency: "USD",
-      maximumFractionDigits: 0,
-    }).format(value);
-  }
-
-  function bindRange(id, onChange) {
-    var input = document.getElementById(id);
-    if (!input) return null;
-    var valueEl = document.querySelector('[data-value-for="' + id + '"]');
-    input.addEventListener("input", function () {
-      if (valueEl) valueEl.textContent = input.value;
-      onChange();
-    });
-    return input;
-  }
-
-  function initRiskAudit() {
-    var root = document.getElementById("risk-audit");
+  function initChoiceAudit(rootId) {
+    var root = document.getElementById(rootId);
     if (!root) return;
 
     var buttons = root.querySelectorAll(".choice-toggle button");
@@ -43,30 +24,9 @@
     });
   }
 
-  function initBiocleaningAudit(locale) {
-    var root = document.getElementById("biocleaning-audit");
-    if (!root) return;
-
-    var resultEl = document.getElementById("biocleaning-audit-result");
-
-    function recompute() {
-      var units = Number(document.getElementById("bio-units").value);
-      var cost = Number(document.getElementById("bio-cost").value);
-      var percent = Number(document.getElementById("bio-percent").value);
-      var total = units * cost * 12 * (percent / 100);
-      resultEl.textContent = formatCurrency(total, locale);
-    }
-
-    bindRange("bio-units", recompute);
-    bindRange("bio-cost", recompute);
-    bindRange("bio-percent", recompute);
-    recompute();
-  }
-
   document.addEventListener("DOMContentLoaded", function () {
-    var locale = document.documentElement.lang === "en" ? "en" : "es";
-    initRiskAudit();
-    initBiocleaningAudit(locale);
+    initChoiceAudit("risk-audit");
+    initChoiceAudit("biocleaning-audit");
 
     var toggle = document.querySelector(".mobile-nav-toggle");
     var panel = document.querySelector(".mobile-nav-panel");

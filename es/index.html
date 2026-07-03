@@ -165,40 +165,36 @@
       </div>
 
       <div class="tool-card" id="biocleaning-audit" style="margin-top:56px;max-width:640px">
-        <div class="eyebrow">Auditoría de riesgo: limpieza sin certificación biofriendly</div>
-        <p class="desc">Un protocolo basado en desechables no reciclables genera un gasto recurrente y una huella ambiental que se puede reducir con productos biofriendly, reutilizables y reciclables. Calcula el impacto de no hacer el cambio.</p>
+        <div class="eyebrow">Auditoría biofriendly del proveedor</div>
+        <p class="desc">La mayoría de las empresas de limpieza en Panamá sigue dependiendo de desechables no reciclables sin poder demostrarlo con protocolos verificables. Responde una pregunta y compara a tu proveedor actual con el estándar biofriendly de Go Services.</p>
 
-        <label class="field">
-          <div class="field-row">
-            <span>Productos desechables usados al mes (unidades)</span>
-            <span class="field-value" data-value-for="bio-units">500</span>
-          </div>
-          <input type="range" id="bio-units" min="0" max="5000" step="50" value="500" />
-        </label>
-
-        <label class="field">
-          <div class="field-row">
-            <span>Costo promedio por unidad desechable (USD)</span>
-            <span class="field-value" data-value-for="bio-cost">3</span>
-          </div>
-          <input type="range" id="bio-cost" min="0" max="30" step="0.5" value="3" />
-        </label>
-
-        <label class="field">
-          <div class="field-row">
-            <span>% del protocolo aún basado en desechables no reciclables</span>
-            <span class="field-value" data-value-for="bio-percent">60</span>
-          </div>
-          <input type="range" id="bio-percent" min="0" max="100" step="5" value="60" />
-        </label>
-
-        <div class="result-panel">
-          <div class="result-label">Costo anual estimado de protocolos no sostenibles</div>
-          <div class="result-value" id="biocleaning-audit-result">USD 10,800</div>
-          <p class="result-caption">Refleja el gasto recurrente en desechables que podría reducirse al adoptar soluciones biofriendly, reutilizables y reciclables.</p>
+        <p class="esg-question">¿Tu proveedor actual de limpieza usa productos 100% biofriendly — biodegradables, reutilizables y reciclables?</p>
+        <div class="choice-toggle" role="group">
+          <button type="button" data-answer="no">No</button>
+          <button type="button" data-answer="yes">Sí</button>
         </div>
 
-        <p class="disclaimer">Estimación referencial, no es una cotización. Una auditoría en sitio determina el ahorro y la reducción de residuos real.</p>
+        <div class="result-panel">
+          <div class="result-state" data-state="empty">
+            <p class="result-caption">Selecciona una respuesta para ver el diagnóstico.</p>
+          </div>
+          <div class="result-state" data-state="no" hidden>
+            <div class="result-label">Ahí está el costo ambiental oculto.</div>
+            <p class="result-message">Un protocolo basado en desechables de un solo uso genera un gasto recurrente y una huella ambiental evitable. Go Services opera 100% biofriendly desde el primer día, bajo certificación ISO 9001, membresía ISSA y APAFAM.</p>
+            <div class="cert-badges">
+              <span class="badge">ISO 9001</span><span class="badge">ISSA</span><span class="badge">APAFAM</span>
+            </div>
+          </div>
+          <div class="result-state" data-state="yes" hidden>
+            <div class="result-label">Bien — ¿pero es un estándar o una excepción?</div>
+            <p class="result-message">Muchos proveedores usan biofriendly como línea premium, no como estándar. En Go Services es el protocolo base en cada instalación, respaldado por ISO 9001, ISSA y APAFAM — no solo en las cuentas que lo piden.</p>
+            <div class="cert-badges">
+              <span class="badge">ISO 9001</span><span class="badge">ISSA</span><span class="badge">APAFAM</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="disclaimer">Este diagnóstico es orientativo. Una auditoría en sitio confirma el impacto real de tu operación.</p>
       </div>
     </div>
   </section>
@@ -367,8 +363,8 @@
           <img src="https://images.unsplash.com/photo-1543286386-2e659306cd6c?q=80&w=1200&auto=format&fit=crop" alt="" />
           <div class="module-body">
             <div class="module-top"><span class="badge">Caso de estudio</span><span class="meta">6 min</span></div>
-            <h3>Caso de estudio: -30% en costos de limpieza</h3>
-            <p>Cómo un cliente corporativo redujo gastos operativos con rutas optimizadas.</p>
+            <h3>Caso de estudio: menor costo operativo con rutas optimizadas</h3>
+            <p>Cómo un cliente corporativo redujo sus gastos operativos de limpieza con rutas optimizadas y protocolos auditables.</p>
           </div>
           <div class="module-cta">Leer más →</div>
         </a>

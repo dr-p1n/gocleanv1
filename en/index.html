@@ -165,40 +165,36 @@
       </div>
 
       <div class="tool-card" id="biocleaning-audit" style="margin-top:56px;max-width:640px">
-        <div class="eyebrow">Uncertified biofriendly cleaning risk audit</div>
-        <p class="desc">Protocols built on non-recyclable disposables carry a recurring cost and an environmental footprint that biofriendly, reusable, and recyclable products can reduce. Calculate the impact of not making the switch.</p>
+        <div class="eyebrow">Vendor biofriendly audit</div>
+        <p class="desc">Most cleaning vendors in Panama still rely on non-recyclable disposables without verifiable protocols to prove otherwise. Answer one question and see how your current vendor compares to the Go Services biofriendly standard.</p>
 
-        <label class="field">
-          <div class="field-row">
-            <span>Disposable products used per month (units)</span>
-            <span class="field-value" data-value-for="bio-units">500</span>
-          </div>
-          <input type="range" id="bio-units" min="0" max="5000" step="50" value="500" />
-        </label>
-
-        <label class="field">
-          <div class="field-row">
-            <span>Average cost per disposable unit (USD)</span>
-            <span class="field-value" data-value-for="bio-cost">3</span>
-          </div>
-          <input type="range" id="bio-cost" min="0" max="30" step="0.5" value="3" />
-        </label>
-
-        <label class="field">
-          <div class="field-row">
-            <span>% of the protocol still based on non-recyclable disposables</span>
-            <span class="field-value" data-value-for="bio-percent">60</span>
-          </div>
-          <input type="range" id="bio-percent" min="0" max="100" step="5" value="60" />
-        </label>
-
-        <div class="result-panel">
-          <div class="result-label">Estimated annual cost of non-sustainable protocols</div>
-          <div class="result-value" id="biocleaning-audit-result">$10,800</div>
-          <p class="result-caption">Reflects the recurring spend on disposables that could be reduced by adopting biofriendly, reusable, and recyclable solutions.</p>
+        <p class="esg-question">Does your current cleaning vendor use 100% biofriendly products — biodegradable, reusable, and recyclable?</p>
+        <div class="choice-toggle" role="group">
+          <button type="button" data-answer="no">No</button>
+          <button type="button" data-answer="yes">Yes</button>
         </div>
 
-        <p class="disclaimer">Reference estimate only, not a quote. An on-site audit determines the real savings and waste reduction.</p>
+        <div class="result-panel">
+          <div class="result-state" data-state="empty">
+            <p class="result-caption">Pick an answer to see the diagnosis.</p>
+          </div>
+          <div class="result-state" data-state="no" hidden>
+            <div class="result-label">That's the hidden environmental cost.</div>
+            <p class="result-message">A protocol built on single-use disposables carries a recurring cost and an avoidable environmental footprint. Go Services operates 100% biofriendly from day one, under ISO 9001 certification, ISSA membership, and APAFAM.</p>
+            <div class="cert-badges">
+              <span class="badge">ISO 9001</span><span class="badge">ISSA</span><span class="badge">APAFAM</span>
+            </div>
+          </div>
+          <div class="result-state" data-state="yes" hidden>
+            <div class="result-label">Good — but is it the standard, or the exception?</div>
+            <p class="result-message">Many vendors treat biofriendly as a premium tier, not the default. At Go Services it's the baseline protocol at every facility, backed by ISO 9001, ISSA, and APAFAM — not just for accounts that ask for it.</p>
+            <div class="cert-badges">
+              <span class="badge">ISO 9001</span><span class="badge">ISSA</span><span class="badge">APAFAM</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="disclaimer">This diagnosis is for guidance only. An on-site audit confirms your operation's real environmental impact.</p>
       </div>
     </div>
   </section>
@@ -367,8 +363,8 @@
           <img src="https://images.unsplash.com/photo-1543286386-2e659306cd6c?q=80&w=1200&auto=format&fit=crop" alt="" />
           <div class="module-body">
             <div class="module-top"><span class="badge">Case study</span><span class="meta">6 min</span></div>
-            <h3>Case study: -30% cleaning costs</h3>
-            <p>How a corporate client cut operational spend with optimized routes.</p>
+            <h3>Case study: lower operating costs through optimized routes</h3>
+            <p>How a corporate client cut cleaning operating costs with optimized routes and auditable protocols.</p>
           </div>
           <div class="module-cta">Read more →</div>
         </a>
