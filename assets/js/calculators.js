@@ -1,25 +1,39 @@
 (function () {
   "use strict";
 
-  function initChoiceAudit(rootId) {
-    var root = document.getElementById(rootId);
-    if (!root) return;
+  function initTabs() {
+    var tabs = Array.prototype.slice.call(document.querySelectorAll(".tab"));
+    var panels = Array.prototype.slice.call(document.querySelectorAll(".tab-panel"));
+    if (!tabs.length || !panels.length) return;
 
-    var buttons = root.querySelectorAll(".choice-toggle button");
-    var states = root.querySelectorAll(".result-state");
+    var mobilePanel = document.querySelector(".mobile-nav-panel");
+    var mobileToggle = document.querySelector(".mobile-nav-toggle");
 
-    function showState(answer) {
-      states.forEach(function (el) {
-        el.hidden = el.dataset.state !== answer;
+    function activate(id) {
+      tabs.forEach(function (tab) {
+        tab.setAttribute("aria-selected", String(tab.dataset.tab === id));
       });
-      buttons.forEach(function (btn) {
-        btn.setAttribute("aria-pressed", String(btn.dataset.answer === answer));
+      panels.forEach(function (panel) {
+        panel.hidden = panel.dataset.panel !== id;
       });
     }
 
-    buttons.forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        showState(btn.dataset.answer);
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        activate(tab.dataset.tab);
+      });
+    });
+
+    var explorer = document.getElementById("explorer");
+    document.querySelectorAll("[data-tab-link]").forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        activate(link.dataset.tabLink);
+        if (mobilePanel && mobilePanel.classList.contains("open")) {
+          mobilePanel.classList.remove("open");
+          if (mobileToggle) mobileToggle.setAttribute("aria-expanded", "false");
+        }
+        if (explorer) explorer.scrollIntoView({ behavior: "smooth", block: "start" });
       });
     });
   }
@@ -95,8 +109,8 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
+    initTabs();
     initScorecard("risk-audit");
-    initChoiceAudit("biocleaning-audit");
 
     var toggle = document.querySelector(".mobile-nav-toggle");
     var panel = document.querySelector(".mobile-nav-panel");

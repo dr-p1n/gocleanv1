@@ -360,6 +360,136 @@ p {
   color: #fff;
 }
 
+/* Hero credential strip */
+.hero-cert-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+  margin-top: 36px;
+}
+
+.hero-cert-strip .stat {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-navy);
+}
+
+/* Teaser grid */
+.teaser-grid {
+  margin-top: 40px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .teaser-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .teaser-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.teaser-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-surface);
+  padding: 24px;
+  text-decoration: none;
+  transition: border-color 0.15s ease;
+}
+
+.teaser-card:hover {
+  border-color: var(--color-navy-50);
+}
+
+.teaser-card h3 {
+  font-size: 1.05rem;
+}
+
+.teaser-card p {
+  font-size: 14px;
+}
+
+.teaser-card .teaser-cta {
+  margin-top: auto;
+  padding-top: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-accent-text);
+}
+
+/* Tabbed explorer */
+.explorer {
+  scroll-margin-top: 88px;
+}
+
+.tab-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.tab {
+  border: none;
+  background: transparent;
+  padding: 12px 2px;
+  margin-bottom: -1px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-slate);
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.tab:hover {
+  color: var(--color-navy);
+}
+
+.tab[aria-selected="true"] {
+  color: var(--color-navy);
+  border-bottom-color: var(--color-accent);
+}
+
+/* Process steps */
+.process-grid {
+  margin-top: 8px;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.process-grid .process-step {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-accent-text);
+}
+
+.process-grid h3 {
+  margin-top: 8px;
+  font-size: 1.05rem;
+}
+
+.process-grid p {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
 /* Procurement-readiness scorecard */
 .scorecard {
   margin-top: 20px;
