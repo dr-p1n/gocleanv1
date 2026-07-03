@@ -66,36 +66,73 @@
 
       <div class="tool-card" id="risk-audit" data-anchor="calculadora-riesgo">
         <div id="calculadora-riesgo" style="position:relative;top:-90px"></div>
-        <div class="eyebrow">Auditoría ESG del proveedor</div>
-        <p class="desc">La mayoría de las empresas de limpieza en Panamá no puede demostrar su cumplimiento ambiental, social y de gobernanza (ESG) con certificaciones reales. Responde una pregunta y compara a tu proveedor actual con el estándar Go Services.</p>
+        <div class="eyebrow">Evaluación de preparación para licitaciones</div>
+        <p class="desc">La mayoría de las empresas de limpieza en Panamá no resistiría una licitación exigente. Responde 5 preguntas sobre tu proveedor actual y descubre tu nivel de exposición — sin costo ni compromiso.</p>
 
-        <p class="esg-question">¿Tu proveedor actual de limpieza cumple con estándares modernos de ESG?</p>
-        <div class="choice-toggle" role="group">
-          <button type="button" data-answer="no">No</button>
-          <button type="button" data-answer="yes">Sí</button>
+        <div class="scorecard">
+          <div class="scorecard-q" data-gap-label="Certificación verificable">
+            <p class="scorecard-label">¿Tu proveedor puede demostrar certificación ISO 9001 o de industria que tu equipo de compras pueda auditar?</p>
+            <div class="choice-toggle" role="group">
+              <button type="button" data-answer="no">No</button>
+              <button type="button" data-answer="yes">Sí</button>
+            </div>
+          </div>
+          <div class="scorecard-q" data-gap-label="Soporte a tu reporte ESG">
+            <p class="scorecard-label">¿Te entrega datos que alimenten tu propio reporte ESG o de sostenibilidad?</p>
+            <div class="choice-toggle" role="group">
+              <button type="button" data-answer="no">No</button>
+              <button type="button" data-answer="yes">Sí</button>
+            </div>
+          </div>
+          <div class="scorecard-q" data-gap-label="Protocolos biofriendly y de bioseguridad">
+            <p class="scorecard-label">¿Sus protocolos son biofriendly y de bioseguridad certificados — no solo declarados?</p>
+            <div class="choice-toggle" role="group">
+              <button type="button" data-answer="no">No</button>
+              <button type="button" data-answer="yes">Sí</button>
+            </div>
+          </div>
+          <div class="scorecard-q" data-gap-label="Continuidad y cobertura nacional">
+            <p class="scorecard-label">¿Garantizan continuidad de servicio y personal capacitado en todas tus sedes?</p>
+            <div class="choice-toggle" role="group">
+              <button type="button" data-answer="no">No</button>
+              <button type="button" data-answer="yes">Sí</button>
+            </div>
+          </div>
+          <div class="scorecard-q" data-gap-label="Reportería auditable">
+            <p class="scorecard-label">¿Entregan reportería documentada y auditable que puedas defender en una licitación?</p>
+            <div class="choice-toggle" role="group">
+              <button type="button" data-answer="no">No</button>
+              <button type="button" data-answer="yes">Sí</button>
+            </div>
+          </div>
         </div>
 
-        <div class="result-panel" id="risk-audit-result">
+        <div class="result-panel" id="scorecard-result">
           <div class="result-state" data-state="empty">
-            <p class="result-caption">Selecciona una respuesta para ver el diagnóstico.</p>
+            <p class="result-caption">Responde las 5 preguntas para ver tu nivel de exposición.</p>
           </div>
-          <div class="result-state" data-state="no" hidden>
-            <div class="result-label">Ese es exactamente el riesgo.</div>
-            <p class="result-message">Un proveedor sin ESG verificable expone a tu empresa a incidentes de bioseguridad, alta rotación de personal y contratos perdidos por incumplimiento. Go Services opera bajo certificación ISO 9001, membresía ISSA y APAFAM, con protocolos 100% biofriendly desde el primer día.</p>
-            <div class="cert-badges">
-              <span class="badge">ISO 9001</span><span class="badge">ISSA</span><span class="badge">APAFAM</span>
+          <div class="result-state" data-state="done" hidden>
+            <div class="scorecard-band" data-band="low" hidden>
+              <div class="result-label">Exposición baja</div>
+              <p class="result-message">Tu proveedor actual cumpliría los criterios clave de una licitación formal. Una auditoría en sitio confirma que lo que dice también lo demuestra.</p>
             </div>
-          </div>
-          <div class="result-state" data-state="yes" hidden>
-            <div class="result-label">Bien — ¿pero puede demostrarlo?</div>
-            <p class="result-message">Muchos proveedores afirman cumplir ESG sin certificación que lo respalde. Go Services sí: ISO 9001, ISSA y APAFAM, auditorías en sitio y protocolos biofriendly verificables — no solo promesas.</p>
-            <div class="cert-badges">
-              <span class="badge">ISO 9001</span><span class="badge">ISSA</span><span class="badge">APAFAM</span>
+            <div class="scorecard-band" data-band="moderate" hidden>
+              <div class="result-label">Exposición moderada</div>
+              <p class="result-message">Tu proveedor deja brechas que un equipo de compras exigente notaría. Cada brecha es un riesgo en tu próxima licitación o auditoría de cliente.</p>
             </div>
+            <div class="scorecard-band" data-band="high" hidden>
+              <div class="result-label">Exposición alta</div>
+              <p class="result-message">Tu proveedor no cumpliría criterios básicos de una licitación formal. Esto te expone a incidentes de cumplimiento, contratos perdidos y observaciones en auditoría.</p>
+            </div>
+            <div class="scorecard-gaps" hidden>
+              <div class="scorecard-gaps-title">Brechas detectadas</div>
+              <ul></ul>
+            </div>
+            <a class="btn btn-primary" href="#contacto" style="margin-top:20px">Agenda una auditoría en sitio</a>
           </div>
         </div>
 
-        <p class="disclaimer">Este diagnóstico es orientativo. Una auditoría en sitio confirma el cumplimiento real de tu operación.</p>
+        <p class="disclaimer">Este diagnóstico es orientativo. Una auditoría en sitio confirma el nivel real de exposición de tu operación.</p>
       </div>
     </div>
   </section>

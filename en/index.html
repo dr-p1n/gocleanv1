@@ -66,36 +66,73 @@
 
       <div class="tool-card" id="risk-audit">
         <div id="risk-calculator" style="position:relative;top:-90px"></div>
-        <div class="eyebrow">Vendor ESG audit</div>
-        <p class="desc">Most cleaning vendors in Panama can't back up their environmental, social, and governance (ESG) claims with real certification. Answer one question and see how your current vendor compares to the Go Services standard.</p>
+        <div class="eyebrow">Procurement-readiness scorecard</div>
+        <p class="desc">Most cleaning vendors in Panama wouldn't hold up to a demanding tender. Answer 5 questions about your current vendor and see your exposure level — no cost, no commitment.</p>
 
-        <p class="esg-question">Does your current cleaning vendor meet modern ESG standards?</p>
-        <div class="choice-toggle" role="group">
-          <button type="button" data-answer="no">No</button>
-          <button type="button" data-answer="yes">Yes</button>
+        <div class="scorecard">
+          <div class="scorecard-q" data-gap-label="Verifiable certification">
+            <p class="scorecard-label">Can your current vendor prove ISO 9001 or industry certification your procurement team can audit?</p>
+            <div class="choice-toggle" role="group">
+              <button type="button" data-answer="no">No</button>
+              <button type="button" data-answer="yes">Yes</button>
+            </div>
+          </div>
+          <div class="scorecard-q" data-gap-label="ESG reporting support">
+            <p class="scorecard-label">Do they provide data that feeds your own ESG or sustainability reporting?</p>
+            <div class="choice-toggle" role="group">
+              <button type="button" data-answer="no">No</button>
+              <button type="button" data-answer="yes">Yes</button>
+            </div>
+          </div>
+          <div class="scorecard-q" data-gap-label="Biofriendly & biosafety protocols">
+            <p class="scorecard-label">Are their protocols certified biofriendly and biosafety-compliant — not just claimed?</p>
+            <div class="choice-toggle" role="group">
+              <button type="button" data-answer="no">No</button>
+              <button type="button" data-answer="yes">Yes</button>
+            </div>
+          </div>
+          <div class="scorecard-q" data-gap-label="National continuity & coverage">
+            <p class="scorecard-label">Can they guarantee service continuity and trained staff across all your sites?</p>
+            <div class="choice-toggle" role="group">
+              <button type="button" data-answer="no">No</button>
+              <button type="button" data-answer="yes">Yes</button>
+            </div>
+          </div>
+          <div class="scorecard-q" data-gap-label="Auditable reporting">
+            <p class="scorecard-label">Do they deliver documented, auditable reporting you could defend in a tender?</p>
+            <div class="choice-toggle" role="group">
+              <button type="button" data-answer="no">No</button>
+              <button type="button" data-answer="yes">Yes</button>
+            </div>
+          </div>
         </div>
 
-        <div class="result-panel" id="risk-audit-result">
+        <div class="result-panel" id="scorecard-result">
           <div class="result-state" data-state="empty">
-            <p class="result-caption">Pick an answer to see the diagnosis.</p>
+            <p class="result-caption">Answer all 5 questions to see your exposure level.</p>
           </div>
-          <div class="result-state" data-state="no" hidden>
-            <div class="result-label">That's exactly the risk.</div>
-            <p class="result-message">A vendor without verifiable ESG standards exposes your company to biosafety incidents, high staff turnover, and lost contracts over non-compliance. Go Services operates under ISO 9001 certification, ISSA membership, and APAFAM — with 100% biofriendly protocols from day one.</p>
-            <div class="cert-badges">
-              <span class="badge">ISO 9001</span><span class="badge">ISSA</span><span class="badge">APAFAM</span>
+          <div class="result-state" data-state="done" hidden>
+            <div class="scorecard-band" data-band="low" hidden>
+              <div class="result-label">Low exposure</div>
+              <p class="result-message">Your current vendor would meet the key criteria of a formal tender. An on-site audit confirms they can prove what they claim.</p>
             </div>
-          </div>
-          <div class="result-state" data-state="yes" hidden>
-            <div class="result-label">Good — but can they prove it?</div>
-            <p class="result-message">Plenty of vendors claim ESG compliance without certification to back it up. Go Services does: ISO 9001, ISSA, and APAFAM, on-site audits, and verifiable biofriendly protocols — not just promises.</p>
-            <div class="cert-badges">
-              <span class="badge">ISO 9001</span><span class="badge">ISSA</span><span class="badge">APAFAM</span>
+            <div class="scorecard-band" data-band="moderate" hidden>
+              <div class="result-label">Moderate exposure</div>
+              <p class="result-message">Your vendor leaves gaps a demanding procurement team would notice. Each gap is a risk in your next tender or client audit.</p>
             </div>
+            <div class="scorecard-band" data-band="high" hidden>
+              <div class="result-label">High exposure</div>
+              <p class="result-message">Your vendor would fall short on basic tender criteria. That exposes you to compliance incidents, lost contracts, and audit findings.</p>
+            </div>
+            <div class="scorecard-gaps" hidden>
+              <div class="scorecard-gaps-title">Gaps detected</div>
+              <ul></ul>
+            </div>
+            <a class="btn btn-primary" href="#contact" style="margin-top:20px">Book an on-site audit</a>
           </div>
         </div>
 
-        <p class="disclaimer">This diagnosis is for guidance only. An on-site audit confirms your operation's real compliance.</p>
+        <p class="disclaimer">This diagnosis is for guidance only. An on-site audit confirms your operation's real exposure level.</p>
       </div>
     </div>
   </section>
