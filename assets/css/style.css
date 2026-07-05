@@ -150,6 +150,11 @@ p {
   color: var(--color-navy);
 }
 
+.main-nav a[aria-current="page"] {
+  color: var(--color-navy);
+  font-weight: 600;
+}
+
 @media (min-width: 900px) {
   .main-nav {
     display: flex;

@@ -1,43 +1,6 @@
 (function () {
   "use strict";
 
-  function initTabs() {
-    var tabs = Array.prototype.slice.call(document.querySelectorAll(".tab"));
-    var panels = Array.prototype.slice.call(document.querySelectorAll(".tab-panel"));
-    if (!tabs.length || !panels.length) return;
-
-    var mobilePanel = document.querySelector(".mobile-nav-panel");
-    var mobileToggle = document.querySelector(".mobile-nav-toggle");
-
-    function activate(id) {
-      tabs.forEach(function (tab) {
-        tab.setAttribute("aria-selected", String(tab.dataset.tab === id));
-      });
-      panels.forEach(function (panel) {
-        panel.hidden = panel.dataset.panel !== id;
-      });
-    }
-
-    tabs.forEach(function (tab) {
-      tab.addEventListener("click", function () {
-        activate(tab.dataset.tab);
-      });
-    });
-
-    var explorer = document.getElementById("explorer");
-    document.querySelectorAll("[data-tab-link]").forEach(function (link) {
-      link.addEventListener("click", function (e) {
-        e.preventDefault();
-        activate(link.dataset.tabLink);
-        if (mobilePanel && mobilePanel.classList.contains("open")) {
-          mobilePanel.classList.remove("open");
-          if (mobileToggle) mobileToggle.setAttribute("aria-expanded", "false");
-        }
-        if (explorer) explorer.scrollIntoView({ behavior: "smooth", block: "start" });
-      });
-    });
-  }
-
   function initScorecard(rootId) {
     var root = document.getElementById(rootId);
     if (!root) return;
@@ -109,7 +72,6 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-    initTabs();
     initScorecard("risk-audit");
 
     var toggle = document.querySelector(".mobile-nav-toggle");
