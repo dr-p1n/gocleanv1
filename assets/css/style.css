@@ -426,6 +426,15 @@ p {
   border-color: var(--color-navy-50);
 }
 
+.teaser-img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  background: var(--color-surface-muted);
+}
+
 .teaser-card h3 {
   font-size: 1.05rem;
 }
