@@ -580,6 +580,24 @@ p {
   margin-top: 16px;
 }
 
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.footer-contact a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.footer-contact a:hover {
+  text-decoration: underline;
+}
+
 .disclaimer {
   margin-top: 16px;
   font-size: 12px;
