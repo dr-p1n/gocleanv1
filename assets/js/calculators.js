@@ -73,6 +73,7 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     initScorecard("risk-audit");
+    initScorecard("eco-audit");
 
     var toggle = document.querySelector(".mobile-nav-toggle");
     var panel = document.querySelector(".mobile-nav-panel");

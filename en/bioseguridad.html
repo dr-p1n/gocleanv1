@@ -21,7 +21,6 @@
     <a class="logo" href="/en/">GO SERVICES <span>// PANAMA</span></a>
 
     <nav class="main-nav">
-      <a href="evaluacion">Scorecard</a>
       <a href="servicios">Services</a>
       <a href="instalaciones">Facilities</a>
       <a href="bioseguridad" aria-current="page">Biosafety</a>
@@ -39,7 +38,6 @@
     </div>
   </div>
   <nav class="mobile-nav-panel">
-    <a href="evaluacion">Scorecard</a>
     <a href="servicios">Services</a>
     <a href="instalaciones">Facilities</a>
     <a href="bioseguridad" aria-current="page">Biosafety</a>
@@ -53,14 +51,81 @@
   <section class="section">
     <div class="wrap">
       <div class="positioning">
-          <img src="https://images.unsplash.com/photo-1605615923013-f26c14fe7155?q=80&w=1200&auto=format&fit=crop" alt="" />
+          <img src="https://images.unsplash.com/photo-1649073005971-37babef31983?q=80&w=1200&auto=format&fit=crop" alt="" />
           <div>
             <div class="eyebrow">Biofriendly commitment</div>
             <h2>Pioneers in 100% biofriendly cleaning in Panama.</h2>
             <p>While most cleaning companies still rely on harsh chemicals and single-use disposables, we built our entire protocol around biodegradable, reusable, and recyclable products — no exceptions.</p>
             <p>It's not an add-on service tier or a premium upsell: it's the standard we operate under at every facility, from day one.</p>
-            <a class="btn btn-secondary" href="evaluacion" style="margin-top:24px">Evaluate your vendor</a>
+            <a class="btn btn-secondary" href="#eco-audit" style="margin-top:24px">Evaluate your vendor</a>
           </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="tool-card" id="eco-audit" style="max-width:640px">
+          <div class="eyebrow">Eco-sustainable chemical management assessment</div>
+          <p class="desc">Most vendors can't prove responsible handling of their chemicals. Answer 4 questions and assess your current vendor's management — no cost, no commitment.</p>
+
+          <div class="scorecard">
+            <div class="scorecard-q" data-gap-label="Biodegradable products">
+              <p class="scorecard-label">Does your vendor use biodegradable, low-toxicity cleaning products?</p>
+              <div class="choice-toggle" role="group">
+                <button type="button" data-answer="no">No</button>
+                <button type="button" data-answer="yes">Yes</button>
+              </div>
+            </div>
+            <div class="scorecard-q" data-gap-label="Environmental certification">
+              <p class="scorecard-label">Do the chemicals carry a verifiable environmental certification or label?</p>
+              <div class="choice-toggle" role="group">
+                <button type="button" data-answer="no">No</button>
+                <button type="button" data-answer="yes">Yes</button>
+              </div>
+            </div>
+            <div class="scorecard-q" data-gap-label="Controlled dosing">
+              <p class="scorecard-label">Do they apply controlled dosing to avoid overuse and waste?</p>
+              <div class="choice-toggle" role="group">
+                <button type="button" data-answer="no">No</button>
+                <button type="button" data-answer="yes">Yes</button>
+              </div>
+            </div>
+            <div class="scorecard-q" data-gap-label="Responsible disposal">
+              <p class="scorecard-label">Do they handle disposal of containers and chemical waste responsibly?</p>
+              <div class="choice-toggle" role="group">
+                <button type="button" data-answer="no">No</button>
+                <button type="button" data-answer="yes">Yes</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="result-panel" id="eco-result">
+            <div class="result-state" data-state="empty">
+              <p class="result-caption">Answer all 4 questions to see your diagnosis.</p>
+            </div>
+            <div class="result-state" data-state="done" hidden>
+              <div class="scorecard-band" data-band="low" hidden>
+                <div class="result-label">Sustainable management</div>
+                <p class="result-message">Your vendor handles chemicals responsibly. An on-site audit confirms the standard holds up in practice.</p>
+              </div>
+              <div class="scorecard-band" data-band="moderate" hidden>
+                <div class="result-label">Room to improve</div>
+                <p class="result-message">There are gaps in chemical management that raise environmental impact and compliance risk. Each gap is a chance to improve.</p>
+              </div>
+              <div class="scorecard-band" data-band="high" hidden>
+                <div class="result-label">High-impact management</div>
+                <p class="result-message">Current handling carries an avoidable environmental footprint and exposes you in sustainability audits. Go Services operates 100% biofriendly from day one.</p>
+              </div>
+              <div class="scorecard-gaps" hidden>
+                <div class="scorecard-gaps-title">Gaps detected</div>
+                <ul></ul>
+              </div>
+              <a class="btn btn-primary" href="https://wa.me/50769823165?text=Hi%2C%20I%20would%20like%20a%20quote%20from%20Go%20Services" style="margin-top:20px">Book a sustainability audit</a>
+            </div>
+          </div>
+
+          <p class="disclaimer">This diagnosis is for guidance only. An on-site audit confirms your operation's real chemical management.</p>
         </div>
     </div>
   </section>

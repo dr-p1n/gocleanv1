@@ -17,8 +17,6 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url><loc>https://go-cleaning.com/es/evaluacion</loc><xhtml:link rel="alternate" hreflang="es" href="https://go-cleaning.com/es/evaluacion" /><xhtml:link rel="alternate" hreflang="en" href="https://go-cleaning.com/en/evaluacion" /><priority>0.8</priority></url>
-  <url><loc>https://go-cleaning.com/en/evaluacion</loc><xhtml:link rel="alternate" hreflang="es" href="https://go-cleaning.com/es/evaluacion" /><xhtml:link rel="alternate" hreflang="en" href="https://go-cleaning.com/en/evaluacion" /><priority>0.8</priority></url>
   <url><loc>https://go-cleaning.com/es/servicios</loc><xhtml:link rel="alternate" hreflang="es" href="https://go-cleaning.com/es/servicios" /><xhtml:link rel="alternate" hreflang="en" href="https://go-cleaning.com/en/servicios" /><priority>0.8</priority></url>
   <url><loc>https://go-cleaning.com/en/servicios</loc><xhtml:link rel="alternate" hreflang="es" href="https://go-cleaning.com/es/servicios" /><xhtml:link rel="alternate" hreflang="en" href="https://go-cleaning.com/en/servicios" /><priority>0.8</priority></url>
   <url><loc>https://go-cleaning.com/es/instalaciones</loc><xhtml:link rel="alternate" hreflang="es" href="https://go-cleaning.com/es/instalaciones" /><xhtml:link rel="alternate" hreflang="en" href="https://go-cleaning.com/en/instalaciones" /><priority>0.8</priority></url>

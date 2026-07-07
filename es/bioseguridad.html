@@ -21,7 +21,6 @@
     <a class="logo" href="/es/">GO SERVICES <span>// PANAMA</span></a>
 
     <nav class="main-nav">
-      <a href="evaluacion">Evaluación</a>
       <a href="servicios">Servicios</a>
       <a href="instalaciones">Instalaciones</a>
       <a href="bioseguridad" aria-current="page">Bioseguridad</a>
@@ -39,7 +38,6 @@
     </div>
   </div>
   <nav class="mobile-nav-panel">
-    <a href="evaluacion">Evaluación</a>
     <a href="servicios">Servicios</a>
     <a href="instalaciones">Instalaciones</a>
     <a href="bioseguridad" aria-current="page">Bioseguridad</a>
@@ -53,14 +51,81 @@
   <section class="section">
     <div class="wrap">
       <div class="positioning">
-          <img src="https://images.unsplash.com/photo-1605615923013-f26c14fe7155?q=80&w=1200&auto=format&fit=crop" alt="" />
+          <img src="https://images.unsplash.com/photo-1649073005971-37babef31983?q=80&w=1200&auto=format&fit=crop" alt="" />
           <div>
             <div class="eyebrow">Compromiso biofriendly</div>
             <h2>Pioneros en limpieza 100% biofriendly en Panamá.</h2>
             <p>Mientras la mayoría de las empresas de limpieza siguen dependiendo de químicos agresivos y desechables de un solo uso, nosotros construimos todo nuestro protocolo alrededor de productos biodegradables, reutilizables y reciclables — sin excepciones.</p>
             <p>No es una línea de servicio adicional ni un complemento premium: es el estándar con el que operamos en cada instalación, desde el primer día.</p>
-            <a class="btn btn-secondary" href="evaluacion" style="margin-top:24px">Evalúa a tu proveedor</a>
+            <a class="btn btn-secondary" href="#eco-audit" style="margin-top:24px">Evalúa a tu proveedor</a>
           </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="tool-card" id="eco-audit" style="max-width:640px">
+          <div class="eyebrow">Evaluación de manejo de químicos ecosostenibles</div>
+          <p class="desc">La mayoría de los proveedores no puede demostrar un manejo responsable de sus químicos. Responde 4 preguntas y evalúa el manejo de tu proveedor actual — sin costo ni compromiso.</p>
+
+          <div class="scorecard">
+            <div class="scorecard-q" data-gap-label="Productos biodegradables">
+              <p class="scorecard-label">¿Tu proveedor usa productos de limpieza biodegradables y de baja toxicidad?</p>
+              <div class="choice-toggle" role="group">
+                <button type="button" data-answer="no">No</button>
+                <button type="button" data-answer="yes">Sí</button>
+              </div>
+            </div>
+            <div class="scorecard-q" data-gap-label="Certificación ambiental">
+              <p class="scorecard-label">¿Los químicos cuentan con certificación o etiqueta ambiental verificable?</p>
+              <div class="choice-toggle" role="group">
+                <button type="button" data-answer="no">No</button>
+                <button type="button" data-answer="yes">Sí</button>
+              </div>
+            </div>
+            <div class="scorecard-q" data-gap-label="Dosificación controlada">
+              <p class="scorecard-label">¿Aplican dosificación controlada para evitar sobreuso y desperdicio?</p>
+              <div class="choice-toggle" role="group">
+                <button type="button" data-answer="no">No</button>
+                <button type="button" data-answer="yes">Sí</button>
+              </div>
+            </div>
+            <div class="scorecard-q" data-gap-label="Disposición responsable">
+              <p class="scorecard-label">¿Gestionan la disposición de envases y residuos químicos de forma responsable?</p>
+              <div class="choice-toggle" role="group">
+                <button type="button" data-answer="no">No</button>
+                <button type="button" data-answer="yes">Sí</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="result-panel" id="eco-result">
+            <div class="result-state" data-state="empty">
+              <p class="result-caption">Responde las 4 preguntas para ver tu diagnóstico.</p>
+            </div>
+            <div class="result-state" data-state="done" hidden>
+              <div class="scorecard-band" data-band="low" hidden>
+                <div class="result-label">Manejo sostenible</div>
+                <p class="result-message">Tu proveedor gestiona los químicos de forma responsable. Una auditoría en sitio confirma que el estándar se cumple en la práctica.</p>
+              </div>
+              <div class="scorecard-band" data-band="moderate" hidden>
+                <div class="result-label">Manejo mejorable</div>
+                <p class="result-message">Hay brechas en el manejo de químicos que aumentan el impacto ambiental y el riesgo de incumplimiento. Cada brecha es una oportunidad de mejora.</p>
+              </div>
+              <div class="scorecard-band" data-band="high" hidden>
+                <div class="result-label">Manejo de alto impacto</div>
+                <p class="result-message">El manejo actual genera un impacto ambiental evitable y te expone en auditorías de sostenibilidad. Go Services opera 100% biofriendly desde el primer día.</p>
+              </div>
+              <div class="scorecard-gaps" hidden>
+                <div class="scorecard-gaps-title">Brechas detectadas</div>
+                <ul></ul>
+              </div>
+              <a class="btn btn-primary" href="https://wa.me/50769823165?text=Hola%2C%20quiero%20una%20cotizacion%20de%20Go%20Services" style="margin-top:20px">Agenda una auditoría de sostenibilidad</a>
+            </div>
+          </div>
+
+          <p class="disclaimer">Este diagnóstico es orientativo. Una auditoría en sitio confirma el manejo real de químicos de tu operación.</p>
         </div>
     </div>
   </section>
