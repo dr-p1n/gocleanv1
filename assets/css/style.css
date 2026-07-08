@@ -803,11 +803,23 @@ p {
   border-radius: 10px;
   background: var(--color-surface);
   text-decoration: none;
-  transition: border-color 0.15s ease;
+  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .module-card:hover {
-  border-color: rgba(242, 183, 5, 0.5);
+  border-color: rgba(242, 183, 5, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Press feedback: card turns yellow on click */
+.module-card:active {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px var(--color-accent);
+  transform: translateY(0);
+}
+
+.module-card:active .module-cta {
+  color: var(--color-navy);
 }
 
 .module-card img {
@@ -1062,4 +1074,90 @@ p {
   height: 6px;
   border-radius: 999px;
   background: var(--color-accent);
+}
+
+/* Flip cards (facility management) */
+.flip-card {
+  perspective: 1200px;
+  cursor: pointer;
+  outline: none;
+  align-self: start;
+}
+
+.flip-card .flip-inner {
+  position: relative;
+  transition: transform 0.55s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-inner,
+.flip-card:focus-visible .flip-inner,
+.flip-card.flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  background: var(--color-surface);
+}
+
+.flip-front {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.flip-front img {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  width: 100%;
+}
+
+.flip-back {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(180deg);
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 24px;
+  overflow: auto;
+}
+
+.flip-back h3 {
+  color: var(--color-navy);
+  font-size: 1.05rem;
+}
+
+.flip-list {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+}
+
+.flip-list li {
+  position: relative;
+  padding-left: 20px;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-navy);
+}
+
+.flip-list li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--color-navy);
 }

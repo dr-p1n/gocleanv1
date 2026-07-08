@@ -75,6 +75,13 @@
     initScorecard("risk-audit");
     initScorecard("eco-audit");
 
+    // Flip cards: tap/click toggles the flip on touch devices (hover handles desktop)
+    document.querySelectorAll(".flip-card").forEach(function (card) {
+      card.addEventListener("click", function () {
+        card.classList.toggle("flipped");
+      });
+    });
+
     var toggle = document.querySelector(".mobile-nav-toggle");
     var panel = document.querySelector(".mobile-nav-panel");
     if (toggle && panel) {
