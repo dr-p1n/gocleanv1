@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268 70" role="img" aria-label="GBAC — Global Biorisk Advisory Council, a division of ISSA">
+  <g fill="#ffffff">
+    <!-- Biohazard mark -->
+    <g fill="none" stroke="#ffffff" stroke-width="4.5">
+      <circle cx="35" cy="20" r="12.5"/>
+      <circle cx="24.2" cy="39" r="12.5"/>
+      <circle cx="45.8" cy="39" r="12.5"/>
+    </g>
+    <circle cx="35" cy="31" r="5.2" fill="#1e2a3a" stroke="#ffffff" stroke-width="3.2"/>
+    <!-- Wordmark -->
+    <text x="70" y="45" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="800" letter-spacing="1">GBAC</text>
+    <text x="71" y="60" font-family="Arial, Helvetica, sans-serif" font-size="8.2" font-weight="600" letter-spacing="0.5">GLOBAL BIORISK ADVISORY COUNCIL</text>
+  </g>
+</svg>

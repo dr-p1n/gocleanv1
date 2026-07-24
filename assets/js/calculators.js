@@ -409,10 +409,72 @@
     document.body.appendChild(wrap);
   }
 
+  // Careers form: builds a prefilled WhatsApp / email message from the fields
+  // so the applicant can attach their résumé in that channel. No backend.
+  function initCareers() {
+    var form = document.getElementById("careers-form");
+    if (!form) return;
+    var phone = form.getAttribute("data-hr-phone") || "";
+    var email = form.getAttribute("data-hr-email") || "";
+    var errorEl = form.querySelector(".careers-error");
+    var en = lang() === "en";
+
+    function field(name) {
+      var el = form.elements[name];
+      return el ? el.value.trim() : "";
+    }
+
+    function showError(msg) {
+      if (!errorEl) return;
+      errorEl.textContent = msg;
+      errorEl.hidden = false;
+    }
+
+    function validate() {
+      var nm = field("name"), ph = field("phone"), em = field("email");
+      if (!nm || !ph || !em) {
+        showError(en ? "Please fill in your name, phone and email." : "Completa tu nombre, teléfono y email.");
+        return null;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) {
+        showError(en ? "Please enter a valid email." : "Ingresa un email válido.");
+        return null;
+      }
+      if (errorEl) errorEl.hidden = true;
+      return { nm: nm, ph: ph, em: em };
+    }
+
+    // The application is always sent to HR in Spanish, regardless of page
+    // language. WhatsApp: the résumé follows as a second message. Email: opens
+    // a new draft in the user's default mail app, where they attach the résumé.
+    form.querySelectorAll("[data-careers-action]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var d = validate();
+        if (!d) return;
+        var base =
+          "Hola, quiero postular como personal de limpieza en Go Services." +
+          "\nNombre: " + d.nm +
+          "\nTeléfono: " + d.ph +
+          "\nEmail: " + d.em;
+        if (btn.getAttribute("data-careers-action") === "email") {
+          var body = base + "\nAdjunto mi hoja de vida.";
+          window.location.href =
+            "mailto:" + email +
+            "?subject=" + encodeURIComponent("Postulación - Personal de limpieza") +
+            "&body=" + encodeURIComponent(body);
+        } else {
+          var msg = base + "\nEnviaré mi hoja de vida en el siguiente mensaje.";
+          window.open("https://wa.me/" + phone + "?text=" + encodeURIComponent(msg), "_blank", "noopener");
+        }
+      });
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     initCookieBanner();
     initScorecard("risk-audit");
     initScorecard("eco-audit");
+    initCareers();
 
     // Flip cards: tap/click toggles the flip on touch devices (hover handles desktop)
     document.querySelectorAll(".flip-card").forEach(function (card) {
