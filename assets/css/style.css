@@ -131,6 +131,7 @@ p {
   text-decoration: none;
   color: var(--color-navy);
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .logo span {
@@ -141,6 +142,8 @@ p {
   display: block;
   height: 90px;
   width: auto;
+  max-width: none;
+  object-fit: contain;
 }
 
 .footer-brand .logo-img {
