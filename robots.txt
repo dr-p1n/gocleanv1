@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://go-cleaning.com/sitemap.xml
+Sitemap: https://www.go-cleaning.com/sitemap.xml

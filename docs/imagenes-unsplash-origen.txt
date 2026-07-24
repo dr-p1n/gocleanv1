@@ -1,0 +1,26 @@
+# Mapa: archivo self-hosted (assets/img/photos/<slug>.webp) <- foto original de Unsplash
+# Formato: <unsplash-photo-id> <slug>
+# Descargadas a ~1600px q80 y convertidas a WebP q82 el 2026-07-23.
+#
+photo-1504384308090-c894fdcc538d call-center
+photo-1519494026892-80bbd2d6fd0d hospital
+photo-1523292562811-8fa7962a78c8 embajadas
+photo-1523705480679-b5d0cc17a656 articulo-recursos
+photo-1535957998253-26ae1ef29506 insumos-oficina
+photo-1543286386-2e659306cd6c recursos
+photo-1563453392212-326f5e854473 insumos-quimicos
+photo-1585561442581-3429684ea438 control-plagas
+photo-1587293852726-70cdb56c2866 abastecimiento
+photo-1599707254554-027aeb4deacd edificios
+photo-1603712725038-e9334ae8f39f dotacion-personal
+photo-1606185540834-d6e7483ee1a4 puertos
+photo-1627905646269-7f034dcc5738 limpieza
+photo-1628177142898-93e36e4e3a50 desinfeccion
+photo-1665655034446-1536f6de3fe6 deteccion-incendios
+photo-1669101602108-fa5ba89507ee oficina-corporativa
+photo-1718152421680-d1580e843cc9 limpieza-industrial
+photo-1718152422704-bd21030a1a99 muebles-alfombras
+photo-1738308508484-2a5226b4208d colegios
+photo-1742483359033-13315b247c74 capacitaciones
+photo-1760463921697-6ab2c0caca20 cadena-frio
+photo-1774271101773-8e7cacedf12b instalaciones

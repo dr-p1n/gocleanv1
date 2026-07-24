@@ -1,1 +1,5 @@
+# Serve the Google Search Console HTML verification file at its exact URL (200,
+# no redirect) — Pages otherwise 308s /*.html to the extensionless clean URL.
+/google7c0bb552082a0bfe.html  /google7c0bb552082a0bfe  200
+
 /  /es/  302

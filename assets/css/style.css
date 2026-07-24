@@ -11,15 +11,20 @@
   --color-border: rgba(30, 42, 58, 0.12);
   --color-slate: #55606e;
 
-  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --font-display: "Outfit", system-ui, sans-serif;
+  --font-body: "Source Sans 3", system-ui, sans-serif;
+  --font-mono: "Source Sans 3", system-ui, sans-serif;
 
   --max-width: 1200px;
 }
 
 * {
   box-sizing: border-box;
+}
+
+/* Ensure [hidden] always wins over display rules (e.g. .lead-capture display:grid) */
+[hidden] {
+  display: none !important;
 }
 
 html {
@@ -42,18 +47,12 @@ img {
 }
 
 /* Faint engineering-grid backdrop for hero/section backgrounds */
+/* Grid backdrop removed — flat backgrounds. Classes kept as no-ops so existing
+   markup (hero / contact panels) needs no changes. */
 .bg-grid {
-  background-image:
-    linear-gradient(to right, rgba(30, 42, 58, 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(30, 42, 58, 0.06) 1px, transparent 1px);
-  background-size: 40px 40px;
 }
 
 .bg-grid-dark {
-  background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.07) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
-  background-size: 40px 40px;
 }
 
 a {
@@ -68,9 +67,9 @@ a {
 
 .eyebrow {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--color-accent-text);
 }
@@ -86,13 +85,18 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-size: clamp(2.75rem, 8vw, 5.625rem);
   line-height: 1.08;
 }
 
 h2 {
-  font-size: clamp(1.5rem, 3vw, 2.1rem);
-  line-height: 1.15;
+  font-size: clamp(1.75rem, 4.5vw, 2.75rem);
+  line-height: 1.12;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 1.8vw, 1.375rem);
+  line-height: 1.25;
 }
 
 p {
@@ -133,6 +137,16 @@ p {
   color: var(--color-accent-text);
 }
 
+.logo-img {
+  display: block;
+  height: 90px;
+  width: auto;
+}
+
+.footer-brand .logo-img {
+  height: 44px;
+}
+
 .main-nav {
   display: none;
   align-items: center;
@@ -170,6 +184,63 @@ p {
   .main-nav {
     display: flex;
   }
+}
+
+/* Nav dropdowns (desktop, hover/focus) */
+.main-nav .nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.main-nav .nav-item.has-dropdown > a::after {
+  content: "\25be"; /* ▾ */
+  margin-left: 5px;
+  font-size: 0.8em;
+  color: var(--color-navy-50);
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 250px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: 0 14px 34px rgba(30, 42, 58, 0.14);
+  padding: 8px;
+  display: none;
+}
+
+.nav-dropdown--wide {
+  columns: 2;
+  column-gap: 4px;
+  min-width: 480px;
+}
+
+.main-nav .nav-item.has-dropdown:hover > .nav-dropdown,
+.main-nav .nav-item.has-dropdown:focus-within > .nav-dropdown {
+  display: block;
+}
+
+.nav-dropdown a {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: var(--color-navy-70);
+  white-space: nowrap;
+  break-inside: avoid;
+}
+
+.nav-dropdown a:hover {
+  background: var(--color-surface-muted);
+  color: var(--color-navy);
+}
+
+.nav-dropdown .nav-dropdown-all {
+  font-weight: 600;
+  color: var(--color-navy);
 }
 
 .header-actions {
@@ -271,12 +342,14 @@ p {
 
 .hero h1 {
   margin-top: 16px;
+  font-size: clamp(2.5rem, 6vw, 4.25rem);
 }
 
 .hero p.lead {
   margin-top: 24px;
-  max-width: 34rem;
-  font-size: 1.05rem;
+  max-width: 38rem;
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  line-height: 1.45;
 }
 
 .hero-ctas {
@@ -331,7 +404,15 @@ p {
   border-radius: 10px;
   background: var(--color-navy);
   color: #fff;
-  padding: 20px;
+  padding: 24px;
+}
+
+/* CTA row inside the result panel — even gap, wraps cleanly on narrow widths. */
+.result-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
 }
 
 .result-panel .result-caption {
@@ -572,17 +653,33 @@ p {
 }
 
 .scorecard-gaps li {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  display: block;
+  position: relative;
+  padding-left: 18px;
+  margin: 10px 0;
   font-size: 14px;
   color: rgba(255, 255, 255, 0.85);
 }
 
 .scorecard-gaps li::before {
   content: "\00d7";
+  position: absolute;
+  left: 2px;
+  top: 0;
   color: var(--color-accent);
   font-weight: 700;
+}
+
+.scorecard-gaps li strong {
+  font-weight: 600;
+}
+
+.gap-outcome {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .result-state .result-label {
@@ -597,12 +694,49 @@ p {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.cert-badges,
-.footer-certs {
+.cert-badges {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
   margin-top: 16px;
+}
+
+/* Footer certifications (logo chips) */
+.footer-certs {
+  margin-top: 24px;
+}
+
+.footer-certs-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 12px;
+}
+
+.footer-certs-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+}
+
+.cert-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 46px;
+  padding: 0;
+}
+
+.cert-chip img {
+  height: 100%;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  display: block;
 }
 
 .footer-contact {
@@ -624,7 +758,7 @@ p {
 }
 
 .disclaimer {
-  margin-top: 16px;
+  margin-top: 24px;
   font-size: 12px;
   color: var(--color-slate);
 }
@@ -632,11 +766,35 @@ p {
 /* Sections */
 .section {
   padding: 72px 0;
-  border-bottom: 1px solid var(--color-border);
 }
 
 .section-muted {
   background: var(--color-surface-muted);
+}
+
+/* Consistent breathing room from a section heading to the block below it. */
+.section-heading + .tool-card,
+.section-heading + .explorer {
+  margin-top: 40px;
+}
+
+/* Careers / "Trabaja con nosotros" */
+.careers-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.careers-wrap .section-heading {
+  margin: 0;
+}
+
+.careers-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .section-heading {
@@ -644,11 +802,20 @@ p {
 }
 
 .section-heading p {
+  margin-top: 24px;
+}
+
+.section-heading h2,
+.section-heading h1 {
   margin-top: 12px;
 }
 
-.section-heading h2 {
-  margin-top: 12px;
+/* Page-title H1s inside section/positioning headers use the base H1 size so
+   every page shares one consistent top-of-scale title (H1 ≫ H2 ≫ H3). */
+.section-heading h1,
+.positioning h1 {
+  font-size: clamp(2.75rem, 8vw, 5.625rem);
+  line-height: 1.08;
 }
 
 /* Credentials */
@@ -707,6 +874,11 @@ p {
   }
 }
 
+/* Breathing room between the page title and its subtext (matches landing hero). */
+.chip-header p {
+  margin-top: 24px;
+}
+
 .chip-row {
   margin-top: 32px;
   display: flex;
@@ -730,13 +902,13 @@ p {
   border-radius: 999px;
   border: 1px solid var(--color-border);
   background: var(--color-surface-muted);
-  padding: 4px 10px;
+  padding: 5px 12px;
   font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.03em;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: var(--color-navy-70);
+  color: var(--color-navy);
 }
 
 .chip span.chip-label {
@@ -766,7 +938,7 @@ p {
 }
 
 .positioning p {
-  margin-top: 20px;
+  margin-top: 24px;
   max-width: 34rem;
 }
 
@@ -888,7 +1060,11 @@ p {
   }
 }
 
-.contact-band h2 {
+.contact-band-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.2;
   color: #fff;
   font-size: clamp(1.4rem, 2.5vw, 1.85rem);
 }
@@ -1030,6 +1206,49 @@ p {
   border-bottom: 1px solid var(--color-border);
 }
 
+/* Mobile nav collapsible groups (services / industries) */
+.mnav-group {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mnav-group > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-navy);
+  cursor: pointer;
+  list-style: none;
+}
+
+.mnav-group > summary::-webkit-details-marker {
+  display: none;
+}
+
+.mnav-group > summary::after {
+  content: "\25be"; /* ▾ */
+  color: var(--color-navy-50);
+}
+
+.mnav-group[open] > summary::after {
+  content: "\25b4"; /* ▴ */
+}
+
+.mnav-group a {
+  padding: 8px 0 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-navy-70);
+  border-bottom: none;
+}
+
+.mnav-group a.nav-dropdown-all {
+  color: var(--color-navy);
+  font-weight: 600;
+}
+
 @media (min-width: 1180px) {
   .mobile-nav-panel {
     display: none !important;
@@ -1160,4 +1379,150 @@ p {
   height: 6px;
   border-radius: 999px;
   background: var(--color-navy);
+}
+
+/* Report gate / lead capture (inside the navy result panel) */
+.report-gate {
+  margin-top: 20px;
+}
+
+.report-gate .report-cta {
+  width: 100%;
+}
+
+.lead-capture {
+  display: grid;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.lead-intro {
+  margin: 0 0 4px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.lead-capture label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.lead-capture input {
+  font-family: var(--font-body);
+  font-size: 15px;
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--color-navy);
+  background: #fff;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 11px 12px;
+}
+
+.lead-capture input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(242, 183, 5, 0.35);
+}
+
+.lead-capture .lead-submit {
+  width: 100%;
+  margin-top: 4px;
+}
+
+.lead-error {
+  margin: 0;
+  font-size: 13px;
+  color: #ffd0c7;
+}
+
+.lead-consent {
+  margin: 0;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.lead-success p {
+  margin: 8px 0 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+/* Secondary button rendered on the navy panel */
+.btn-on-navy {
+  display: inline-block;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.btn-on-navy:hover {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Card/subsection H3 tier — clearer step below H2, above body. */
+.teaser-card h3,
+.module-card h3,
+.flip-back h3,
+.flip-front h3,
+.process-grid h3 {
+  font-size: clamp(1.25rem, 1.8vw, 1.375rem);
+}
+
+/* Off-white backdrop behind content images (shows on load / letterboxing).
+   Scoped to <main> so the header logo and footer cert logos are untouched. */
+main img {
+  background-color: var(--color-bg);
+}
+
+/* Cookie / privacy notice banner (injected by calculators.js) */
+.cookie-banner {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 100;
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: var(--color-navy);
+  color: #fff;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.28);
+}
+.cookie-banner p {
+  margin: 0;
+  flex: 1 1 320px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.85);
+}
+.cookie-banner a {
+  color: var(--color-accent);
+}
+.cookie-accept {
+  flex-shrink: 0;
+  background: var(--color-accent);
+  color: var(--color-navy);
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+.cookie-accept:hover {
+  background: var(--color-accent-strong);
 }

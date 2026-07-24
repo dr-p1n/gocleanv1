@@ -1,0 +1,35 @@
+# Cloudflare Pages — header strategy
+# Docs: https://developers.cloudflare.com/pages/configuration/headers/
+# Order matters only for same-header collisions: the most specific path wins.
+
+/*
+  # --- Security ---
+  # Site is 100% static: own scripts only, Google Fonts, self-hosted images,
+  # and a fetch to Google Apps Script for the lead-capture endpoint.
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), camera=(), microphone=(), payment=(), usb=(), interest-cohort=()
+  Cross-Origin-Opener-Policy: same-origin
+  # --- Indexing ---
+  # Mirrors the <meta name="robots"> in every page as an HTTP header so crawlers
+  # get the directive even for non-HTML responses. index,follow is the default,
+  # stated explicitly; large image/snippet previews enabled for rich results.
+  X-Robots-Tag: index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1
+  # HSTS: 1 year, NO includeSubDomains / NO preload on purpose.
+  # go-cleaning.com stays on Route 53 and hosts email (MX/SPF/DMARC).
+  # includeSubDomains/preload could force HTTPS on mail-related hosts — do not enable
+  # without auditing every subdomain first.
+  Strict-Transport-Security: max-age=31536000
+
+  # --- Caching (default: HTML) ---
+  # Site deploys frequently and fights CDN propagation lag, and HTML is served at
+  # clean URLs (no fingerprint), so always revalidate to surface updates instantly.
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Static assets are NOT fingerprinted (style.css / calculators.js keep their names),
+# so we cannot use immutable. Short cache + background revalidation is the safe balance.
+/assets/*
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+  X-Content-Type-Options: nosniff
