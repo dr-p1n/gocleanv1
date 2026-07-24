@@ -164,4 +164,18 @@ Leads", en la cuenta del cliente).
 4. **Google Search Console:** enviar `sitemap.xml` y solicitar indexación de las páginas
    prioritarias (ver `docs/GSC-y-Sheet-checklist.md`).
 5. **Borrar la fila de prueba** `TEST — BORRAR` (source: test-curl) de la Google Sheet si sigue.
-6. **Definir la mantención:** a quién queda el sitio y el traspaso de accesos (§8).
+6. **Logo GBAC:** el que está en `assets/img/certs/gbac.svg` es una **recreación en SVG** (blanco,
+   para el footer navy), no el archivo oficial. Reemplazar por el oficial de GBAC cuando se tenga.
+   Confirmar además que la empresa efectivamente posee esa certificación antes de publicitarla.
+7. **Definir la mantención:** a quién queda el sitio y el traspaso de accesos (§8).
+
+## 10. Página de empleo (Trabaja con nosotros / Work with us)
+
+- Rutas: `/es/trabaja-con-nosotros` y `/en/work-with-us` (en el nav de todo el sitio).
+- Formulario (nombre/teléfono/email) que **no usa backend**: al enviar arma un mensaje
+  **en español** y abre WhatsApp de RR. HH. (**+507 6517-0926**) o un correo nuevo a
+  **info@go-cleaning.com**; la persona adjunta su CV en ese canal (en WhatsApp, como segundo
+  mensaje). Lógica en `assets/js/calculators.js` → `initCareers()`.
+- Contacto de RR. HH. (`info@go-cleaning.com` / `+507 6517-0926`) vive solo en esta página.
+  El footer usa el contacto de ventas (`ventas@go-cleaning.com`, `dabin.rivera@go-cleaning.com`,
+  WhatsApp `+507 6982-3165`).
