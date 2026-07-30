@@ -2,25 +2,95 @@
 # Formato: <unsplash-photo-id> <slug>
 # Descargadas a ~1600px q80 y convertidas a WebP q82 el 2026-07-23.
 #
-photo-1504384308090-c894fdcc538d call-center
+# 2026-07-29 (v6): reemplazo de 4 imagenes por indicacion del cliente.
+#   - edificios: ahora FOTO REAL del cliente ("limpieza vidrios.jpeg" de la
+#     carpeta "Go Services/fotos metatags"). Antes: construccion (photo-1599707254554).
+#   - oficina-corporativa: ahora FOTO REAL del cliente ("limpieza oficina v3.jpeg",
+#     misma carpeta; calzado cerrado, no crocs). Antes: photo-1669101602108.
+#   - muebles-alfombras: nueva de Unsplash (ver abajo). Antes: powerwashing acera.
+#   - colegios: nueva de Unsplash (ver abajo). Antes: aula oscura.
+#
+# 2026-07-29 (v6, batch 2): mas reemplazos por el cliente.
+#   - colegios: aula clasica luminosa (pizarra + filas). colegios-moderna: aula
+#     internacional con whiteboard+pantalla (usada en "Centros Educativos").
+#   - muebles-alfombras: beauty shot alfombra + sofa (antes: tapiceria).
+#   - cuidado-pisos: NUEVO slot propio (antes compartia muebles-alfombras).
+#   - outsourcing: NUEVO slot propio, FOTO REAL cliente puerto (antes compartia
+#     instalaciones).
+#   - insumos-quimicos: FOTO REAL cliente (productos Hyper Clean).
+#   - limpieza-industrial: planta/fabrica limpia (antes: pasillo oscuro).
+#
+# 2026-07-29 (v6, batch 3): call-center por indicacion del cliente.
+#   - call-center: piso de call center impecable (dos hileras de cubiculos con
+#     mamparas turquesa, techo de luces, sin personas). Antes: photo-1504384308090
+#     (oficina de techo negro/industrial, se veia oscura y con desorden).
+#     Requisitos del cliente: iluminado/alegre, pisos y oficina brillantes, plano
+#     abierto (no primer plano de agentes), y sin post-its / tazas / celulares.
+#   - trabaja-con-nosotros: banda full-bleed en la pagina de careers. UNA sola
+#     imagen y sin repetir: FOTO REAL cliente "port management v2" (la unica sin
+#     usar que no tiene terceros en cuadro). Regla del cliente: no mostrar personas
+#     ajenas a la marca (es competencia visual).
+#   - insumos-limpieza: NUEVO slot (antes insumos-oficina, un escritorio con laptops).
+#   - recursos (hero + card de "Otros Servicios", NO confundir con recursos-kpis):
+#     dashboard corporativo en laptop. Antes: photo-1543286386 (grafico dibujado a
+#     mano en papel; irrelevante y con texto "SUCKING/NOT SUCKING" en el eje).
+#
+# 2026-07-30 (v6, batch 4): fotos REALES del cliente, slugs unicos.
+#   - home-hero: NUEVO slug propio para el hero del home. Antes usaba
+#     oficina-corporativa.webp, que se repetia en la card "Oficinas" (ese archivo
+#     tiene 12 referencias en el sitio). Ahora: operario puliendo el piso de un
+#     lobby corporativo (ventanales, piso reflejante). 1200x900 (la foto original
+#     mide 896px de ancho; no se escala mas para no ablandarla).
+#   - trabaja-con-nosotros (banda full-bleed .bleed-band, 21/9 en desktop y 3/2 en
+#     movil): ahora pulido de piso en sucursal bancaria (logo GO visible en el polo
+#     y en la maquina). Antes: demarcacion de vialidad en puerto, que se parecia
+#     demasiado a outsourcing.webp y puertos.webp. 1400x933.
+#     NOTA: el recorte 3:2 esta centrado para que la banda 21:9 de desktop caiga
+#     sobre la maquina y el piso mojado.
+#
+# 2026-07-30 (v6, batch 5): centros educativos con fotos REALES + insumos.
+#   - colegios-moderna (tab "Limpieza para Empresas": hero de
+#     limpieza-centros-educativos + card en servicios): operaria con polo Go
+#     limpiando estante de biblioteca escolar. Antes: aula internacional (stock).
+#   - colegios (tab "Industrias": card del home, card de industrias y hero de
+#     colegios): operario limpiando mesa en biblioteca escolar. Antes: aula
+#     clasica luminosa (stock).
+#     Ambas 1200x800 (originales 900x1600 verticales) y RECORTADAS por arriba del
+#     pie de foto que estampa el telefono ("Tomada con mi Galaxy A33 5G").
+#   - insumos-limpieza (card "Venta de Insumos" en instalaciones): rollo de papel
+#     + atomizador con quimico, fondo neutro y SIN marcas comerciales. Antes: solo
+#     atomizadores. Se busco un surtido completo con papel higienico, pero en
+#     Unsplash casi todo trae marcas (Clorox/Lysol) o es gondola de supermercado.
+#
+photo-1549637642-90187f64f420 call-center
 photo-1519494026892-80bbd2d6fd0d hospital
 photo-1523292562811-8fa7962a78c8 embajadas
 photo-1523705480679-b5d0cc17a656 articulo-recursos
 photo-1535957998253-26ae1ef29506 insumos-oficina
-photo-1543286386-2e659306cd6c recursos
-photo-1563453392212-326f5e854473 insumos-quimicos
+photo-1460925895917-afdab827c52f recursos
+cliente-foto-real:hyper-clean-productos insumos-quimicos
 photo-1585561442581-3429684ea438 control-plagas
 photo-1587293852726-70cdb56c2866 abastecimiento
-photo-1599707254554-027aeb4deacd edificios
+cliente-foto-real:limpieza-vidrios edificios
 photo-1603712725038-e9334ae8f39f dotacion-personal
 photo-1606185540834-d6e7483ee1a4 puertos
 photo-1627905646269-7f034dcc5738 limpieza
-photo-1628177142898-93e36e4e3a50 desinfeccion
+cliente-foto-real:hyper-clean-productos desinfeccion
 photo-1665655034446-1536f6de3fe6 deteccion-incendios
-photo-1669101602108-fa5ba89507ee oficina-corporativa
-photo-1718152421680-d1580e843cc9 limpieza-industrial
-photo-1718152422704-bd21030a1a99 muebles-alfombras
-photo-1738308508484-2a5226b4208d colegios
+cliente-foto-real:limpieza-oficina-v3 oficina-corporativa
+photo-1771531072574-af6ed6b954c0 limpieza-industrial
+cliente-foto-real:limpieza-oficina-v4 muebles-alfombras
+photo-1580582932707-520aed937b7b colegios
+photo-1752579664702-e6609516e21a colegios-moderna
+photo-1780369088190-914cc3eee938 cuidado-pisos
+cliente-foto-real:port-management-v3 outsourcing
+cliente-foto-real:limpieza-oficina-v2 limpieza-empresas
+cliente-foto-real:WhatsApp-2026-07-28-08.31.18(pulido-sucursal-bancaria) trabaja-con-nosotros
+cliente-foto-real:WhatsApp-2026-07-27-11.45.07(pulido-lobby-corporativo) home-hero
+cliente-foto-real:escuela-2(biblioteca-escolar-estante) colegios-moderna
+cliente-foto-real:escuelas(biblioteca-escolar-mesa) colegios
+photo-1550963295-019d8a8a61c5 insumos-limpieza
+photo-1560472354-b33ff0c44a43 recursos-kpis
 photo-1742483359033-13315b247c74 capacitaciones
 photo-1760463921697-6ab2c0caca20 cadena-frio
 photo-1774271101773-8e7cacedf12b instalaciones

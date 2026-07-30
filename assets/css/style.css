@@ -827,6 +827,25 @@ p {
   gap: 16px;
 }
 
+/* Full-bleed photo band. Lives outside .wrap, so it spans the section's full
+   width without negative margins or 100vw (no horizontal scrollbar). */
+.bleed-band {
+  margin: 40px 0;
+}
+
+.bleed-band img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .bleed-band img {
+    aspect-ratio: 21 / 9;
+  }
+}
+
 /* Careers page — application form + HR contact aside */
 .careers-layout {
   display: grid;
@@ -1014,6 +1033,13 @@ p {
     flex-direction: row;
     align-items: flex-end;
   }
+}
+
+/* Sentence-length hero headline: steps below the display scale so a long line
+   doesn't fill the viewport before any content shows. */
+h1.h1-long {
+  font-size: clamp(2rem, 4.2vw, 3.25rem);
+  line-height: 1.14;
 }
 
 /* Breathing room between the page title and its subtext (matches landing hero). */
@@ -1477,6 +1503,23 @@ p {
   aspect-ratio: 16 / 10;
   object-fit: cover;
   width: 100%;
+}
+
+/* Front face uses the same padding scale as .module-card, whose rules are
+   scoped to that class and so never reached these cards. */
+.flip-front .module-body {
+  padding: 24px;
+}
+
+.flip-front .module-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.flip-front .module-top + h3 {
+  margin-top: 16px;
 }
 
 .flip-back {
