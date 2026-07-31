@@ -492,5 +492,44 @@
         toggle.setAttribute("aria-expanded", String(expanded));
       });
     }
+
+    initHubs();
   });
+
+  // Hub cards (home): reveal the full list on pointer-over or keyboard focus.
+  // CSS :hover alone left the panel unreachable by keyboard, and depended on
+  // the pointer never leaving the card. Driving an .is-open class instead makes
+  // both paths explicit, and Escape closes it.
+  function initHubs() {
+    var hubs = document.querySelectorAll(".hub");
+    if (!hubs.length) return;
+    // Touch/coarse pointers never get the panel; the CTA carries them through.
+    if (!window.matchMedia || !window.matchMedia("(hover: hover)").matches) return;
+
+    hubs.forEach(function (hub) {
+      var panel = hub.querySelector(".hub-panel");
+      if (!panel) return;
+
+      function open() {
+        hub.classList.add("is-open");
+      }
+      function close() {
+        hub.classList.remove("is-open");
+      }
+
+      hub.addEventListener("pointerenter", open);
+      hub.addEventListener("pointerleave", close);
+      hub.addEventListener("focusin", open);
+      hub.addEventListener("focusout", function (ev) {
+        if (!hub.contains(ev.relatedTarget)) close();
+      });
+      hub.addEventListener("keydown", function (ev) {
+        if (ev.key === "Escape") {
+          close();
+          var cta = hub.querySelector(".hub-cta");
+          if (cta) cta.focus();
+        }
+      });
+    });
+  }
 })();

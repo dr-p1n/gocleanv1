@@ -94,3 +94,21 @@ photo-1560472354-b33ff0c44a43 recursos-kpis
 photo-1742483359033-13315b247c74 capacitaciones
 photo-1760463921697-6ab2c0caca20 cadena-frio
 photo-1774271101773-8e7cacedf12b instalaciones
+
+--- 2026-07-31 · Miniaturas del home (hub cards) ---
+assets/img/photos/thumbs/*.webp (17 archivos, 96x96, WebP q80, ~4KB c/u)
+Motivo: los hub cards del home listan 14 servicios + 9 industrias con imagen.
+Servir los .webp de 1600px como thumbs de 44px era desperdicio de ancho de banda.
+Origen: recorte cuadrado centrado + resize de los .webp de 1600px del mismo nombre
+en assets/img/photos/. No son fotos nuevas — si reemplazas la foto grande,
+regenera el thumb correspondiente o quedará desincronizado.
+
+--- 2026-07-31 · home-hero vuelto a portrait ---
+home-hero.webp: 1200x900 (landscape) -> 896x1120 (portrait 4:5), WebP q82.
+Motivo: el original del cliente (WhatsApp Image 2026-07-27 at 11.45.07.jpeg)
+ES portrait nativo, 896x1195. El recorte landscape de v6 cortaba el ventanal
+completo y la mayor parte del piso pulido con reflejos. Ahora se recorta solo
+la franja inferior mas vacia (75px) para llegar a 4:5.
+Ancho nativo 896px, sin upscale (v6 lo escalaba a 1200 sin ganar detalle).
+CSS: clase .hero-img--portrait en es/index.html y en/index.html.
+Backup del landscape en el scratchpad de la sesion.
