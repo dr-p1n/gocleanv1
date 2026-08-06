@@ -1926,3 +1926,22 @@ main img {
   border-radius: 6px;
   object-fit: cover;
 }
+
+/* .hub--lg (Industrias): only 9 items in 3 columns, so the panel has vertical
+   room to spare — use bigger thumbnails there. The services hub keeps 44px
+   because its 14 items already fill the panel height. Thumb files are 160px,
+   so they stay sharp at 2x up to 80px. */
+.hub--lg .hub-item {
+  gap: 14px;
+  padding: 8px 10px;
+}
+
+.hub--lg .hub-item img {
+  width: 72px;
+  height: 72px;
+  border-radius: 8px;
+}
+
+.hub--lg .hub-item span {
+  font-size: 15px;
+}

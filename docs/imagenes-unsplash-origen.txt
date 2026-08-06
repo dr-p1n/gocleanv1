@@ -112,3 +112,27 @@ la franja inferior mas vacia (75px) para llegar a 4:5.
 Ancho nativo 896px, sin upscale (v6 lo escalaba a 1200 sin ganar detalle).
 CSS: clase .hero-img--portrait en es/index.html y en/index.html.
 Backup del landscape en el scratchpad de la sesion.
+
+--- 2026-08-06 · proyectos-especiales: foto propia (fin del duplicado) ---
+proyectos-especiales.webp: NUEVO slug. 1204x802 (3:2), WebP q82.
+Motivo: "Limpieza Post-Construccion" y "Proyectos Especiales" compartian
+edificios.webp, y salian identicas una al lado de la otra en el hub del home.
+Post-Construccion se queda con edificios.webp; Proyectos Especiales pasa a
+foto propia. NO es una excepcion aprobada como insumos-quimicos/desinfeccion.
+Origen: foto REAL del cliente, "fotos metatags/WhatsApp Image 2026-07-28 at
+08.17.09.jpeg" (1204x1600 portrait, estaba sin usar). Recorte 3:2 centrado.
+Encaja con lo que cubre la pagina: equipo de 4 operarios en uniforme lavando
+escalinata exterior = "operativo de limpieza intensiva con equipo dedicado".
+Ancho nativo 1204px, sin upscale.
+Repuntado en 6 sitios: es/en index.html (thumb del hub), es/en servicios.html
+(module-card) y es/en proyectos-especiales.html (hero de la pagina).
+
+--- 2026-08-06 · Miniaturas regeneradas a 160px ---
+assets/img/photos/thumbs/*.webp: 96x96 -> 160x160, WebP q84 (18 archivos, 105KB total).
+Motivo: el hub de Industrias pasa a thumbs de 72px (clase .hub--lg en el CSS,
+solo 9 items en 3 columnas = sobra alto vertical). A 96px la fuente quedaba por
+debajo de 2x y se veia blanda. 160px cubre hasta 80px de display a 2x.
+El hub de Servicios se queda en 44px: sus 14 items ya llenan el panel.
+Nuevo: thumbs/proyectos-especiales.webp (recorte cuadrado desplazado a la
+izquierda para encuadrar al grupo, no centrado como el resto).
+Backup de los thumbs de 96px en el scratchpad de la sesion.
