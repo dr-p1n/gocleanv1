@@ -36,6 +36,14 @@
 #     mano en papel; irrelevante y con texto "SUCKING/NOT SUCKING" en el eje).
 #
 # 2026-07-30 (v6, batch 4): fotos REALES del cliente, slugs unicos.
+#   - limpieza-empresas: REEMPLAZADA (v7). Antes usaba 'limpieza oficina v2', que
+#     mostraba papeles/post-its en el escritorio y un globo metalico — contra el
+#     criterio del cliente (nada de post-its, tazas ni celulares visibles). Ahora usa
+#     'limpieza oficina v3': operario puliendo piso en oficina de cubiculos, escritorios
+#     despejados, sin rotulos que identifiquen al cliente final. 966x644 (recorte 3:2
+#     centrado en el operario; NO se escala a 1600 para no ablandarla, el origen mide
+#     966px de ancho). Se descarto 'WhatsApp 2026-07-28 08.31.18' pese a ser mas
+#     luminosa: se lee 'Servicios Bancarios' en el rotulo y hay primeros planos de rostros.
 #   - home-hero: NUEVO slug propio para el hero del home. Antes usaba
 #     oficina-corporativa.webp, que se repetia en la card "Oficinas" (ese archivo
 #     tiene 12 referencias en el sitio). Ahora: operario puliendo el piso de un
@@ -84,7 +92,7 @@ photo-1580582932707-520aed937b7b colegios
 photo-1752579664702-e6609516e21a colegios-moderna
 photo-1780369088190-914cc3eee938 cuidado-pisos
 cliente-foto-real:port-management-v3 outsourcing
-cliente-foto-real:limpieza-oficina-v2 limpieza-empresas
+cliente-foto-real:limpieza-oficina-v3(pulido-oficina-cubiculos) limpieza-empresas
 cliente-foto-real:WhatsApp-2026-07-28-08.31.18(pulido-sucursal-bancaria) trabaja-con-nosotros
 cliente-foto-real:WhatsApp-2026-07-27-11.45.07(pulido-lobby-corporativo) home-hero
 cliente-foto-real:escuela-2(biblioteca-escolar-estante) colegios-moderna

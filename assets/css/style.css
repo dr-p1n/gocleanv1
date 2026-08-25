@@ -8,6 +8,12 @@
   --color-accent-text: #a67a00;
   --color-surface: #ffffff;
   --color-surface-muted: #e7e9e5;
+  /* Amarillo de marca a mayor luminosidad: mismo tono (45) y misma saturacion
+     (96%) que --color-accent, solo mas claro. Sustituye a las cajas blancas
+     para romper el exceso de off-white. Contraste 5.0:1 con --color-slate y
+     11.4:1 con --color-navy, o sea AA para texto normal. */
+  --color-panel-warm: #fde291;
+  --color-panel-warm-border: rgba(217, 164, 0, 0.45);
   --color-border: rgba(30, 42, 58, 0.12);
   --color-slate: #55606e;
 
@@ -153,20 +159,18 @@ p {
 .main-nav {
   display: none;
   align-items: center;
-  gap: 20px;
-  font-size: 14px;
+  /* .wrap esta topado en 1200px, asi que el espacio disponible es constante en
+     todo el desktop: 1200 - 139 (logo) - 185 (acciones) = 876px para el nav.
+     Los 6 items suman 689px a 15px, dejando 187px repartibles en 5 huecos.
+     28px deja ~47px de margen de seguridad. Un gap en vw creceria sin que
+     hubiera mas espacio real y desbordaria en pantallas anchas. */
+  gap: 28px;
+  font-size: 15px;
   font-weight: 500;
 }
 
 .main-nav a {
   white-space: nowrap;
-}
-
-@media (min-width: 1280px) and (max-width: 1440px) {
-  .main-nav {
-    gap: 14px;
-    font-size: 13px;
-  }
 }
 
 .main-nav a {
@@ -381,9 +385,9 @@ p {
 
 /* Card / tool */
 .tool-card {
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-panel-warm-border);
   border-radius: 14px;
-  background: var(--color-surface);
+  background: var(--color-panel-warm);
   padding: 24px;
   box-shadow: 0 1px 0 0 rgba(30, 42, 58, 0.04);
 }
@@ -1726,14 +1730,14 @@ main img {
    ------------------------------------------------------------------ */
 .dual-heading {
   display: grid;
-  gap: 48px;
+  gap: 20px;
   grid-template-columns: 1fr;
 }
 
 @media (min-width: 900px) {
   .dual-heading {
     grid-template-columns: 1fr 1fr;
-    gap: 64px;
+    gap: 24px;
   }
 }
 
@@ -1747,6 +1751,51 @@ main img {
   max-width: none;
 }
 
+/* Paneles de color de la seccion dual.
+   La pagina venia siendo casi toda #f0f1ee y este bloque se leia apagado.
+   Se resuelve con dos cajas dentro de la paleta de marca: una en tinte del
+   amarillo y otra en navy solido, que ademas rima con la banda de contacto. */
+.dual-panel {
+  padding: 40px 36px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  /* Arriba, no centrado: con contenido de distinto largo el centrado dejaba
+     los dos H2 a alturas distintas y se leia como un error de maquetado. */
+  justify-content: flex-start;
+}
+
+@media (max-width: 620px) {
+  .dual-panel {
+    padding: 32px 24px;
+  }
+}
+
+.dual-panel--warm {
+  background: var(--color-panel-warm);
+  border: 1px solid var(--color-panel-warm-border);
+}
+
+.dual-panel--navy {
+  background: var(--color-navy);
+  border: 1px solid var(--color-navy);
+}
+
+/* El texto del panel oscuro toma su color del propio panel, nunca de los
+   tokens claros, o quedaria navy sobre navy. */
+.dual-panel--navy h2 {
+  color: #ffffff;
+}
+
+.dual-panel--navy p,
+.dual-panel--navy .prose-list li {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.dual-panel--navy .prose-list li::before {
+  background: var(--color-accent);
+}
+
 /* ------------------------------------------------------------------
    Hub card — one card per section; hovering reveals the full list
    with thumbnails, same idea as the header dropdowns.
@@ -1757,9 +1806,9 @@ main img {
 .hub {
   position: relative;
   margin-top: 48px;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-panel-warm-border);
   border-radius: 10px;
-  background: var(--color-surface);
+  background: var(--color-panel-warm);
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
@@ -1807,12 +1856,13 @@ main img {
 
 .hub-copy h3 {
   margin-top: 16px;
-  font-size: 1.5rem;
+  font-size: 1.85rem;
 }
 
 .hub-copy p {
-  margin-top: 12px;
-  font-size: 15px;
+  margin-top: 14px;
+  font-size: 17px;
+  line-height: 1.5;
 }
 
 .hub-cta {
@@ -1820,9 +1870,24 @@ main img {
   align-items: center;
   gap: 4px;
   margin-top: 24px;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--color-accent-text);
+  font-size: 16px;
+  font-weight: 700;
+  /* Navy, no --color-accent-text: el dorado sobre el panel amarillo daba
+     3.05:1 y no llega a AA. Navy sobre #fde291 da 11.37:1. */
+  color: var(--color-navy);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.hub-cta:hover {
+  color: #000;
+}
+
+/* Misma razon: el eyebrow dorado es ilegible sobre las cajas amarillas. */
+.hub .eyebrow,
+.tool-card .eyebrow {
+  color: var(--color-navy);
+  font-size: 15px;
 }
 
 .hub-cta:hover {
@@ -1834,8 +1899,10 @@ main img {
   display: none;
   margin-top: 12px;
   font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--color-slate);
+  font-size: 13px;
+  /* Sobre amarillo, --color-slate (5.01:1) pasa AA pero se lee debil a 13px;
+     navy-70 sube el contraste sin competir con el titulo. */
+  color: var(--color-navy-70);
 }
 
 .hub-panel {

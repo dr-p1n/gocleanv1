@@ -2,4 +2,14 @@
 # no redirect) — Pages otherwise 308s /*.html to the extensionless clean URL.
 /google7c0bb552082a0bfe.html  /google7c0bb552082a0bfe  200
 
+# Consolidacion de canibalizacion (v7). Estas dos paginas duplicaban contenido
+# de un servicio existente y ademas estaban mal clasificadas como "industrias":
+# "Muebles y Alfombras" y "Control de Plagas" son servicios, no sectores.
+# Google repartia las senales entre ambas versiones y no posicionaba ninguna.
+# 301 permanente para trasladar la autoridad a la pagina superviviente.
+/es/muebles-alfombras   /es/alfombras-muebles  301
+/en/muebles-alfombras   /en/alfombras-muebles  301
+/es/control-de-plagas   /es/fumigacion         301
+/en/control-de-plagas   /en/fumigacion         301
+
 /  /es/  302
