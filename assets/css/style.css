@@ -414,7 +414,12 @@ p {
 
 .tool-card p.desc {
   margin-top: 8px;
-  font-size: 14px;
+  /* Entradilla del quiz: sobre el panel amarillo, 14px en slate se leia
+     debil. Navy en 17px/600 da 11.37:1 y ancla la jerarquia del bloque. */
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--color-navy);
 }
 
 .result-panel {
@@ -451,7 +456,10 @@ p {
   display: inline-flex;
   gap: 2px;
   margin-top: 12px;
-  border: 1px solid var(--color-border);
+  /* Pista blanca: sobre el panel amarillo el toggle transparente se fundia
+     con el fondo y no se leia como control accionable. */
+  background: #ffffff;
+  border: 1px solid rgba(30, 42, 58, 0.18);
   border-radius: 999px;
   padding: 3px;
 }
@@ -528,20 +536,39 @@ p {
   }
 }
 
+/* Trio "Mas alla de la limpieza": navy, no blanco ni amarillo.
+   Van entre los dos hubs amarillos y la banda de contacto, asi que el navy
+   alterna el ritmo de la pagina y encadena hacia el CTA oscuro de abajo. */
 .teaser-card {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-navy);
   border-radius: 12px;
-  background: var(--color-surface);
+  background: var(--color-navy);
   padding: 24px;
   text-decoration: none;
-  transition: border-color 0.15s ease;
+  transition: border-color 0.15s ease, transform 0.15s ease;
 }
 
 .teaser-card:hover {
-  border-color: var(--color-navy-50);
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+/* Todo el texto del card toma su color del propio panel oscuro. */
+.teaser-card h3 {
+  color: #ffffff;
+}
+
+.teaser-card p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* El eyebrow dorado (--color-accent-text) da 3.73:1 sobre navy y no llega a
+   AA; el amarillo de marca da 7.98:1 y aqui si funciona como acento. */
+.teaser-card .eyebrow {
+  color: var(--color-accent);
 }
 
 .teaser-img {
@@ -564,9 +591,9 @@ p {
 .teaser-card .teaser-cta {
   margin-top: auto;
   padding-top: 4px;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
-  color: var(--color-accent-text);
+  color: var(--color-accent);
 }
 
 /* Tabbed explorer */
@@ -649,8 +676,9 @@ p {
 }
 
 .scorecard-label {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
+  line-height: 1.45;
   color: var(--color-navy);
 }
 
@@ -1653,13 +1681,20 @@ h1.h1-long {
 }
 
 /* Secondary button rendered on the navy panel */
+/* Boton fantasma sobre el panel navy de resultados.
+   Faltaba declarar el fondo: ni .btn ni esta regla lo definian, asi que el
+   <button> caia al buttonface del navegador (#efefef) y quedaba texto blanco
+   sobre gris claro — 1.07:1, ilegible. Se veia como una caja en blanco en el
+   resultado de las dos calculadoras. Transparente sobre navy da 14.51:1. */
 .btn-on-navy {
   display: inline-block;
+  background: transparent;
   color: #fff;
   border-color: rgba(255, 255, 255, 0.35);
 }
 
 .btn-on-navy:hover {
+  background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.7);
 }
 
