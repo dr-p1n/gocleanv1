@@ -444,6 +444,17 @@ p {
   color: rgba(255, 255, 255, 0.65);
 }
 
+/* En el estado vacio esta linea es el UNICO contenido del panel navy: es el
+   mensaje que explica que hacer, no una nota al pie. A 12px/65% (6.97:1) se
+   leia como letra chica. 16px/500 al 92% da 12.49:1. */
+.result-state[data-state="empty"] .result-caption {
+  margin-top: 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.92);
+}
+
 /* ESG question + choice toggle */
 .esg-question {
   margin-top: 24px;

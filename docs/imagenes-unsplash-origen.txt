@@ -36,6 +36,11 @@
 #     mano en papel; irrelevante y con texto "SUCKING/NOT SUCKING" en el eje).
 #
 # 2026-07-30 (v6, batch 4): fotos REALES del cliente, slugs unicos.
+#   - limpieza: REEMPLAZADA (v7). La foto de stock anterior mostraba un vaso de
+#     cafe sobre el escritorio, contra el criterio del cliente (nada de tazas,
+#     post-its ni celulares visibles). Ahora foto real: operario aspirando bajo
+#     un escritorio de oficina. 1200x800, no se escala a 1600 para no ablandarla.
+#     Solo se usa en instalaciones.html (ES+EN), flip-card "Limpieza".
 #   - limpieza-empresas: REEMPLAZADA (v7). Antes usaba 'limpieza oficina v2', que
 #     mostraba papeles/post-its en el escritorio y un globo metalico — contra el
 #     criterio del cliente (nada de post-its, tazas ni celulares visibles). Ahora usa
@@ -82,7 +87,7 @@ photo-1587293852726-70cdb56c2866 abastecimiento
 cliente-foto-real:limpieza-vidrios edificios
 photo-1603712725038-e9334ae8f39f dotacion-personal
 photo-1606185540834-d6e7483ee1a4 puertos
-photo-1627905646269-7f034dcc5738 limpieza
+cliente-foto-real:WhatsApp-2026-07-28-08.34.55(aspirado-bajo-escritorio) limpieza
 cliente-foto-real:hyper-clean-productos desinfeccion
 photo-1665655034446-1536f6de3fe6 deteccion-incendios
 cliente-foto-real:limpieza-oficina-v3 oficina-corporativa
