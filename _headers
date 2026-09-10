@@ -6,7 +6,12 @@
   # --- Security ---
   # Site is 100% static: own scripts only, Google Fonts, self-hosted images,
   # and a fetch to Google Apps Script for the lead-capture endpoint.
-  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests
+  # frame-src esta SOLO por el mapa de Google embebido en el footer del home.
+  # Sin el, default-src 'self' bloquea el iframe sin dejar error visible.
+  # Nota: permite que Google fije cookies en las paginas que lleven el mapa,
+  # por eso el embed vive solo en /es/ y /en/ y no en todo el sitio. Si el mapa
+  # se quita, quitar tambien frame-src.
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; frame-src https://www.google.com; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
