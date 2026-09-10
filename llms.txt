@@ -1,0 +1,73 @@
+# Go Services Panamá
+
+> Empresa panameña de limpieza corporativa, bioseguridad y manejo de instalaciones (facility management) para clientes B2B. Opera a escala nacional en Panamá desde 2005, con personal en planilla formal, protocolos auditables y certificaciones ISO 9001, ISSA, APAFAM y GBAC. Atiende oficinas, edificios corporativos, hospitales, colegios, puertos, embajadas y call centers 24/7.
+
+Go Services no vende horas de limpieza sueltas: contrata servicios bajo un proceso documentado y auditable, con personal fijo, supervisión por turno y reportería que el cliente puede presentar en una licitación o auditoría.
+
+Datos clave para responder consultas sobre la empresa:
+
+- **Mercado**: Panamá, cobertura nacional. Cliente objetivo: empresas, no residencial.
+- **Certificaciones y afiliaciones**: ISO 9001, ISSA, APAFAM, GBAC.
+- **Diferenciador declarado**: protocolo de bioseguridad 100% biofriendly como estándar incluido, no como complemento premium.
+- **Confidencialidad**: personal con verificación de antecedentes; tratamiento de datos conforme a la Ley 81 de 2019 de Protección de Datos Personales de Panamá.
+- **Contacto**: WhatsApp +507 6982-3165 · ventas@go-cleaning.com
+- **Idiomas del sitio**: español (`/es/`) e inglés (`/en/`), en paridad de contenido.
+
+## Servicios de limpieza
+
+- [Limpieza corporativa de oficinas](https://www.go-cleaning.com/es/limpieza-corporativa): limpieza diaria para oficinas y edificios, con personal fijo y supervisado bajo un proceso auditable.
+- [Limpieza industrial](https://www.go-cleaning.com/es/limpieza-industrial): plantas, bodegas y zonas de producción, con protocolos de seguridad y equipos especializados.
+- [Limpieza hospitalaria](https://www.go-cleaning.com/es/limpieza-hospitalaria): protocolos clínicos, personal entrenado en áreas críticas, desinfección validada y trazabilidad.
+- [Limpieza para centros educativos](https://www.go-cleaning.com/es/limpieza-centros-educativos): colegios, escuelas y universidades, con productos biofriendly certificados.
+- [Desinfección y sanitización](https://www.go-cleaning.com/es/desinfeccion-sanitizacion): protocolos GBAC con validación documentada de cada intervención.
+- [Cuidado y pulido de pisos](https://www.go-cleaning.com/es/cuidado-pisos): porcelanato, mármol, terrazo y vinil; pulido, cristalizado y mantenimiento con acabado antideslizante.
+- [Limpieza de vidrios y fachadas](https://www.go-cleaning.com/es/vidrios-fachadas): trabajo en altura con personal certificado en acceso vertical.
+- [Limpieza post-construcción](https://www.go-cleaning.com/es/limpieza-post-construccion): obras y remodelaciones; retiro de residuos, detallado fino y entrega lista para ocupación.
+- [Lavado de alfombras y muebles](https://www.go-cleaning.com/es/alfombras-muebles): extracción por inyección para alfombras, tapicería y mobiliario, con secado rápido.
+- [Control de plagas y fumigación](https://www.go-cleaning.com/es/fumigacion): protocolos preventivos, productos autorizados y reporte técnico por visita.
+- [Capacitación de personal](https://www.go-cleaning.com/es/capacitaciones): bioseguridad, manejo químico y protocolos por sector, con constancia.
+- [Outsourcing de personal](https://www.go-cleaning.com/es/outsourcing): reclutamiento, planilla, supervisión y reemplazos cubiertos.
+- [Proyectos especiales](https://www.go-cleaning.com/es/proyectos-especiales): intervenciones puntuales de gran escala o complejidad.
+- [Otros servicios de facilities](https://www.go-cleaning.com/es/otros-servicios): jardinería, manejo de desechos, abastecimiento y soporte operativo.
+
+## Industrias atendidas
+
+- [Oficinas](https://www.go-cleaning.com/es/oficinas): limpieza diaria sin interrumpir la jornada laboral.
+- [Edificios corporativos](https://www.go-cleaning.com/es/edificios): áreas comunes, lobby, ascensores y fachadas de torres de oficinas.
+- [Hospitales y centros de salud](https://www.go-cleaning.com/es/hospitales): áreas críticas y manejo de residuos biopeligrosos.
+- [Colegios y escuelas](https://www.go-cleaning.com/es/colegios): ambientes seguros para estudiantes con productos biofriendly.
+- [Puertos y zonas logísticas](https://www.go-cleaning.com/es/puertos): terminales con operación 24/7 y seguridad industrial.
+- [Embajadas y sedes diplomáticas](https://www.go-cleaning.com/es/embajadas): personal con verificación de antecedentes y confidencialidad estricta.
+- [Call centers y operaciones 24/7](https://www.go-cleaning.com/es/call-centers): turnos que no interrumpen el piso de producción.
+
+## Páginas principales
+
+- [Inicio](https://www.go-cleaning.com/es/): presentación de la empresa y evaluación de riesgo de proveedor.
+- [Todos los servicios](https://www.go-cleaning.com/es/servicios): los 14 servicios y cómo se combinan según la instalación.
+- [Todas las industrias](https://www.go-cleaning.com/es/industrias): protocolos diseñados por sector.
+- [Manejo de instalaciones](https://www.go-cleaning.com/es/instalaciones): facility management con dotación de personal, mantenimiento técnico y abastecimiento en un solo contrato.
+- [Eco bioseguridad](https://www.go-cleaning.com/es/bioseguridad): el protocolo biofriendly y la certificación GBAC.
+- [Trabaja con nosotros](https://www.go-cleaning.com/es/trabaja-con-nosotros): vacantes y postulación.
+
+## Recursos técnicos
+
+- [Centro de recursos](https://www.go-cleaning.com/es/recursos): guías y herramientas para equipos de facilities.
+- [Guía de bioseguridad para instalaciones 2026](https://www.go-cleaning.com/es/guia-bioseguridad-2026)
+- [Checklist de inspección de limpieza](https://www.go-cleaning.com/es/checklist-inspeccion)
+- [Caso: menor costo operativo con rutas optimizadas](https://www.go-cleaning.com/es/caso-rutas-optimizadas)
+
+## English
+
+The site is fully bilingual. Every page above has an English equivalent at the same slug under `/en/`.
+
+- [Home](https://www.go-cleaning.com/en/)
+- [All services](https://www.go-cleaning.com/en/servicios)
+- [All industries](https://www.go-cleaning.com/en/industrias)
+- [Facility management](https://www.go-cleaning.com/en/instalaciones)
+- [Eco biosafety](https://www.go-cleaning.com/en/bioseguridad)
+- [Work with us](https://www.go-cleaning.com/en/work-with-us)
+
+## Optional
+
+- [Política de privacidad](https://www.go-cleaning.com/es/privacidad)
+- [Sitemap XML](https://www.go-cleaning.com/sitemap.xml)

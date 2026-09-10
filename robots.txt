@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# Resumen del sitio para asistentes de IA (convencion llmstxt.org).
+# No es una directiva de robots.txt; se deja aqui para que sea descubrible.
+# LLMs: https://www.go-cleaning.com/llms.txt
+
 Sitemap: https://www.go-cleaning.com/sitemap.xml
