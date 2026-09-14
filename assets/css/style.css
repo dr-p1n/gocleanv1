@@ -852,6 +852,111 @@ p {
   color: #fff;
 }
 
+/* ------------------------------------------------------------------
+   Reseñas de Google. Se muestran como texto citado con atribucion y
+   enlace a la fuente. NO llevan schema Review ni aggregateRating: las
+   directrices de Google prohiben marcar como propias las reseñas
+   alojadas en otro sitio, y hacerlo arriesga los resultados
+   enriquecidos de todo el dominio.
+   ------------------------------------------------------------------ */
+.rev-score {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.rev-num {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-navy);
+}
+
+.rev-stars {
+  font-size: 1.35rem;
+  letter-spacing: 2px;
+  color: var(--color-accent-strong);
+}
+
+/* La media estrella: se recorta la mitad derecha del glifo. */
+.rev-half {
+  display: inline-block;
+  width: 0.5em;
+  overflow: hidden;
+}
+
+.rev-score a {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-navy);
+}
+
+.rev-grid {
+  margin-top: 32px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 760px) {
+  .rev-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.rev-card {
+  margin: 0;
+  padding: 24px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-panel-warm);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.rev-card blockquote {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-navy);
+}
+
+.rev-card blockquote::before { content: "\201C"; }
+.rev-card blockquote::after  { content: "\201D"; }
+
+.rev-card figcaption {
+  margin-top: auto;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-navy);
+}
+
+.rev-card .rev-meta {
+  display: block;
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--color-slate);
+  margin-top: 2px;
+}
+
+.rev-note {
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--color-slate);
+}
+
+/* Horario. No es un enlace, asi que .footer-contact a no lo alcanza. */
+.footer-contact .footer-hours {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 14px;
+  line-height: 1.45;
+  margin-top: 4px;
+}
+
 /* Mapa embebido. Solo esta en el home: el iframe deja que Google fije
    cookies, y no hay motivo para cargarlo en las 62 paginas restantes.
    La grilla del footer es de 4 columnas con .footer-brand ocupando 2,
