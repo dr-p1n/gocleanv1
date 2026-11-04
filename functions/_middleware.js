@@ -19,9 +19,18 @@ const SPAM_PATTERNS = [
   /^\/pcmypage/i,
   /^\/safe_search\//i,
   /^\/zhHant\//i,
+  // Restos del sitio viejo (informes de Search Console del 2026-11-04: ~1.000
+  // "No encontrada (404)" + 4.558 "Rastreada: sin indexar", todo basura estilo
+  // catalogo japones). Se acotan a la FORMA exacta observada, no a rutas amplias:
+  //   /738555802            raiz con 8-9 digitos y nada mas (744 de 1.000 muestras)
+  //   /items/088007924.html catalogo con id numerico (?srsltid=... irrelevante)
+  // Riesgo asumido y revisable: si el ecommerce usara ids numericos de 8+ digitos
+  // directamente en la raiz, esta regla los mataria. Avisar al equipo de la tienda.
+  /^\/\d{8,}$/,
+  /^\/items\/\d+\.html$/i,
   // RETIRADAS A PROPOSITO — no reactivar sin revisar el ecommerce:
   //   /\/product\/(detail|review)\//i
-  //   /^\/search$/i
+  //   /^\/search$/i   (solo la variante con firma de spam se mata; ver isSpamSearch)
   // El ecommerce previsto para diciembre de 2026 va a crear rutas reales bajo
   // /product/... y lo mas probable es que tambien un /search. Con esas dos reglas
   // activas, las fichas de producto y el buscador devolverian 410 Gone el dia del
@@ -29,10 +38,28 @@ const SPAM_PATTERNS = [
   // que quedan son cadenas que ningun ecommerce va a generar.
 ];
 
-export async function onRequest(context) {
-  const { pathname } = new URL(context.request.url);
+// /search NO esta en SPAM_PATTERNS a proposito: el ecommerce de diciembre puede
+// tener un buscador real ahi. El spam del sitio viejo, en cambio, es inconfundible:
+// `/search?category&search_word&restrict[]=person_id(int)=XXXX` (100 de 100 en el
+// export). Se mata SOLO cuando la query trae esa firma; `/search`, `/search?q=...`
+// y cualquier parametro de buscador legitimo siguen su curso.
+function isSpamSearch(url) {
+  if (url.pathname !== "/search") return false;
+  let query = url.search;
+  try {
+    query = decodeURIComponent(url.search.replace(/\+/g, " "));
+  } catch (_) {
+    // Percent-encoding malformado: se evalua la query cruda. Nunca debe lanzar,
+    // porque este middleware corre antes que todo el sitio.
+  }
+  return /person_id\(int\)/i.test(query) && /search_word/i.test(query);
+}
 
-  if (SPAM_PATTERNS.some((pattern) => pattern.test(pathname))) {
+export async function onRequest(context) {
+  const url = new URL(context.request.url);
+  const { pathname } = url;
+
+  if (isSpamSearch(url) || SPAM_PATTERNS.some((pattern) => pattern.test(pathname))) {
     return new Response("410 Gone\n", {
       status: 410,
       headers: {
