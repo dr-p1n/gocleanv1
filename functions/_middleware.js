@@ -49,5 +49,30 @@ export async function onRequest(context) {
 
   // Todo lo demas sigue su curso normal: _redirects, _headers, las paginas
   // estaticas y el 404.html real para rutas desconocidas.
-  return context.next();
+  const response = await context.next();
+
+  // Correccion del X-Robots-Tag en las respuestas 404.
+  //
+  // El problema: la regla `/*` de `_headers` declara `index, follow, ...` y se
+  // aplica por RUTA DE PETICION, no por codigo de respuesta. Una ruta inexistente
+  // casa con `/*`, asi que el 404 salia con `X-Robots-Tag: index, follow` mientras
+  // el propio 404.html lleva `<meta name="robots" content="noindex, follow">`:
+  // dos senales contradictorias en la misma respuesta.
+  //
+  // Por que NO se arregla en `_headers` (corrige la nota de v9): el fichero solo
+  // sabe casar patrones de URL — no existe condicion por status. Y una regla
+  // `/404.html` solo cubriria una peticion literal a /404.html, no las rutas
+  // desconocidas que son justo las que devuelven el 404. Verificado contra la
+  // documentacion de Pages el 2026-11-04.
+  //
+  // Aqui si se puede porque el middleware ya ve la respuesta montada. Se clona
+  // para poder escribir las cabeceras (las de `context.next()` son inmutables) y
+  // se alinea el header con el meta de la pagina.
+  if (response.status === 404) {
+    const patched = new Response(response.body, response);
+    patched.headers.set("X-Robots-Tag", "noindex, follow");
+    return patched;
+  }
+
+  return response;
 }
