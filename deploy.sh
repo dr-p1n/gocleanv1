@@ -29,8 +29,18 @@ rsync -a --delete \
   --exclude '.DS_Store' \
   "$SRC"/ "$STAGE"/
 
+# `npx wrangler` resolves to the nearest node_modules up the directory tree, which
+# may be an unrelated or broken install (in Nov 2026 the workerd binaries in both
+# ~/node_modules and DATRUM projects/node_modules were wiped, breaking every npx
+# invocation). Prefer a wrangler already on PATH; fall back to npx only if there is none.
+if command -v wrangler >/dev/null 2>&1; then
+  WRANGLER=(wrangler)
+else
+  WRANGLER=(npx wrangler)
+fi
+
 echo "Deploying staged copy to branch: $BRANCH"
-npx wrangler pages deploy "$STAGE" \
+"${WRANGLER[@]}" pages deploy "$STAGE" \
   --project-name=gocleanv1 \
   --branch="$BRANCH" \
   --commit-dirty=true
